@@ -1,0 +1,954 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section topCSS
+{
+    <link href="~/Assets/css/header-styles-index.css" rel="stylesheet" />
+    <link href="~/Assets/css/hot.css" rel="stylesheet" />
+    <link href="~/Assets/css/Home__Slideshow.css" rel="stylesheet" />
+    <link href="~/Assets/css/index_bottom.css" rel="stylesheet" />
+}
+@section endJS
+{
+    <script src="~/Assets/js/jquery-3.3.1.js"></script>
+    <script src="~/Assets/js/header-js.js"></script>
+    <script type="text/javascript" src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="~/Assets/js/Home.js"></script>
+    <script src="~/Assets/js/headerjava.js"></script>
+    <script src="~/Assets/js/hot.js"></script>
+}
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+<div class="pot"></div>
+<main id="main" role="main">
+    <!-- BEGIN content_for_index -->
+    <!--大圖輪播-->
+    <div id="shopify-section-slideshow" class="shopify-section shopify-section--slideshow">
+        <section id="section-slideshow"
+                 data-section-id="slideshow"
+                 data-section-type="slideshow">
+            <div class="Slideshow Slideshow--fullscreen">
+                <div class="Slideshow__Carousel Slideshow__Carousel--withScrollButton Carousel Carousel--fadeIn Carousel--fixed Carousel--insideDots"
+                     data-flickity='{
+                        "prevNextButtons": false,
+                        "setGallerySize": false,
+                        "wrapAround": true,
+                        "pauseAutoPlayOnHover": false,
+                        "autoPlay": 5000,
+                        "pageDots": true
+                      }'>
+                    <div id="Slideslide-1"
+                         class=" Slideshow__Slide Carousel__Cell"
+                         style="visibility: visible"
+                         data-slide-index="0">
+                        <div id="animation_1" class="Slideshow__ImageContainer"
+                             style=" background-image: url(/Assets/images/Home/HP2_1800x.jpg)">
+                            <img class="Slideshow__Image Image--lazyLoad"
+                                 src="~/Assets/images/Home/HP2_1800x.jpg"
+                                 alt="" />
+                        </div>
+                        <!-- <div class="Slideshow__ImageContainer   hidden-phone"
+                          style=" background-image: url(//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-APRIL-ARRIVAL-Cover_1x1.jpeg.jpg?v=1554252660)"
+                        >
+                          <img class="Slideshow__Image Image--lazyLoad hide-no-js"
+                            data-src="//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-APRIL-ARRIVAL-Cover_{width}x.jpeg?v=1554252660"
+                            data-optimumx="1.2"
+                            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800]"
+                            data-sizes="auto"
+                            alt=""
+                          />
+
+                        </div> -->
+                        <!--文字框-->
+                        <div class="s1 Slideshow__Content Slideshow__Content--middleRight">
+                            <header class="SectionHeader">
+                                <h3 class="SectionHeader__SubHeading Heading u-h6">
+                                    金屬的光芒與鋯石的耀眼，簡約經典卻又與眾不同
+                                </h3>
+                                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">
+                                    Monthly New Arrival
+                                </h2>
+                                <div class="SectionHeader__ButtonWrapper">
+                                    <div class="ButtonGroup ButtonGroup--spacingSmall ">
+                                        <a href="/Home/ProductsPage"
+                                           class="ButtonGroup__Item Button">前往新品</a>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+
+                    <div id="Slideslide-2"
+                         class=" Slideshow__Slide Carousel__Cell "
+                         data-slide-index="1">
+                        <div id="animation_2" class=" Slideshow__ImageContainer"
+                             style=" background-image: url(/Assets/images/Home/HP_1600x.jpg)">
+                            <img class=" Slideshow__Image Image--lazyLoad"
+                                 src="~/Assets/images/Home/HP_1600x.jpg"
+                                 @*data-src="//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-APRIL-ARRIVAL-Cover-2-Mobile_x800.jpeg?v=1554252655"*@
+                                 alt="" />
+                        </div>
+                        <!-- <div class="Slideshow__ImageContainer   hidden-phone"
+                          style=" background-image: url(//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-APRIL-ARRIVAL-Cover-Mobile_1x1.jpeg.jpg?v=1554252660)"
+                        >
+                          <img class="Slideshow__Image Image--lazyLoad hide-no-js"
+                            data-src="//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-APRIL-ARRIVAL-Cover-Mobile_{width}x.jpeg?v=1554252660"
+                            data-optimumx="1.2"
+                            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800]"
+                            data-sizes="auto"
+                            alt=""
+                          />
+                        </div> -->
+                        <!--文字框-->
+                        <div class="Slideshow__Content Slideshow__Content--middleLeft">
+                            <header class="SectionHeader">
+                                <h3 class="SectionHeader__SubHeading Heading u-h6">
+                                    金屬的光芒與鋯石的耀眼，簡約經典卻又與眾不同
+                                </h3>
+                                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">
+                                    Monthly New Arrival
+                                </h2>
+                                <div class="SectionHeader__ButtonWrapper">
+                                    <div class="ButtonGroup ButtonGroup--spacingSmall ">
+                                        <a href="/Home/ProductsPage"
+                                           class="ButtonGroup__Item Button">前往新品</a>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+
+                    <div id="Slideslide-3"
+                         class="Slideshow__Slide Carousel__Cell "
+                         data-slide-index="2">
+                        <div id="animation_3"
+                             class="Slideshow__ImageContainer"
+                             style=" background-image: url(/Assets/images/Home/ANVI-GRACEFUL_ADVENTURE-Spring_Summer_2019_Collection_HomeSlide1_1800x.jpg)">
+                            <img class="Slideshow__Image Image--lazyLoad"
+                                 src="~/Assets/images/Home/ANVI-GRACEFUL_ADVENTURE-Spring_Summer_2019_Collection_HomeSlide1_1800x.jpg"
+                                 data-src="//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-GRACEFUL_ADVENTURE-Spring_Summer_2019_Collection_MobileHomeSlide1_x800.jpg?v=1548917929"
+                                 alt="" />
+
+                        </div>
+                        <!-- <div
+                          class="Slideshow__ImageContainer   hidden-phone"
+                          style=" background-image: url(//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-GRACEFUL_ADVENTURE-Spring_Summer_2019_Collection_HomeSlide1_1x1.jpg?v=1548917723)"
+                        >
+                          <img
+                            class="Slideshow__Image Image--lazyLoad hide-no-js"
+                            data-src="//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-GRACEFUL_ADVENTURE-Spring_Summer_2019_Collection_HomeSlide1_{width}x.jpg?v=1548917723"
+                            data-optimumx="1.2"
+                            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800]"
+                            data-sizes="auto"
+                            alt=""
+                          />
+                        </div> -->
+                        <!--文字框-->
+                        <div class="Slideshow__Content Slideshow__Content--middleLeft">
+                            <header class="SectionHeader">
+                                <h3 class="SectionHeader__SubHeading Heading u-h6">
+                                    善用優美的格調，堅毅的自信，大膽開創自己的故事
+                                </h3>
+                                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">
+                                    Graceful Adventure 系列
+                                </h2>
+                                <div class="SectionHeader__ButtonWrapper">
+                                    <div class="ButtonGroup ButtonGroup--spacingSmall ">
+                                        <a href="/Home/ProductsPage/Ear Rings"
+                                           class="ButtonGroup__Item Button">探索系列</a>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+                <button id="section-end"
+                        data-href="#section-slideshow-end"
+                        class="Slideshow__ScrollButton RoundButton RoundButton--medium"
+                        aria-label="Scroll to content"
+                        data-animate-bottom>
+                    <svg class="Icon Icon--arrow-bottom" role="presentation" viewBox="0 0 21 11">
+                        <polyline fill="none" stroke="currentColor" points="0.5 0.5 10.5 10.5 20.5 0.5" stroke-width="1.25"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <span id="section-slideshow-end" class="Anchor"></span>
+        </section>
+    </div>
+
+    <!--產品類別-->
+    <header id="" class="PageHeader">
+        <div class="Container">
+            <div class="SectionHeader">
+                <h1 class="SectionHeader_Heading">PRODUCTS CATEGORY</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="CollectionMain">
+        <div class="ProductItemListWrapper">
+            <div id="PIL" class="ProductItemList">
+                <div id="i1" class="Grid__Cell animated-block">
+                    <div class="ProductItem">
+                        <a src="" href="/Home/ProductsPage/Bracelets">
+                            <img class="img_bottom" src="~/Assets/images/Bracelets/3_ebcf859e-215d-4b14-8a01-6ad2535e40a2_900x.jpg" alt="" />
+                            <img id="S1" src="~/Assets/images/Bracelets/B19401_900x.jpg" alt="" />
+                        </a>
+                        <div class="ProductItem_Info ">
+                            <h1 class="ProductItem_Title Heading">手鍊</h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="i2" class="Grid__Cell  animated-block">
+                    <div class="ProductItem">
+                        <a src="" href="/Home/ProductsPage/Ear Rings">
+                            <img class="img_bottom" src="~/Assets/images/EarRings/G3_a94660c7-92de-46e5-966d-617f55f9d59e_900x.jpg" alt="" />
+                            <img id="#S2" src="~/Assets/images/EarRings/E19402G-1_900x.jpg" />
+                        </a>
+                        <div class="ProductItem_Info ">
+                            <h2 class="ProductItem_Title Heading">耳環</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="i3" class="Grid__Cell  animated-block">
+                    <div class="ProductItem">
+                        <a src="" href="/Home/ProductsPage/Necklaces">
+                            <img class="img_bottom" src="~/Assets/images/Necklaces/3_3_2e459b5c-083d-4682-9861-2718a9292092_900x.jpg" alt="" />
+                            <img id="#S3" src="~/Assets/images/Necklaces/N19402G_900x.jpg" alt="" />
+                        </a>
+                        <div class="ProductItem_Info ">
+                            <h2 class="ProductItem_Title Heading">項鍊</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="i4" class="Grid__Cell  animated-block">
+                    <div class="ProductItem">
+                        <a src="" href="/Home/ProductsPage/Rings">
+                            <img class="img_bottom" src="~/Assets/images/Rings/3_e011466f-942c-4c87-87df-cfaa3f0b17ee_900x.jpg" alt="" />
+                            <img id="#S4" src="~/Assets/images/Rings/R19401_900x.jpg" alt="" />
+                        </a>
+                        <div class="ProductItem_Info ">
+                            <h2 class="ProductItem_Title Heading">戒指</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--本周熱銷推薦-->
+    <div id="shopify-section-ahop-the-look" class="shopify-section shopify-section--bordered">
+        <section class="Section Section--spacingNormal">
+            <header class="SectionHeader SectionHeader--center">
+                <div class="Containe">
+                    <h2 class="SectionHeader__Heading Heading u-h1">本周熱銷推薦</h2>
+                </div>
+            </header>
+            <div class="ShopTheLook Carousel flickity-enabled" tabindex="0">
+                <div class="flickity-viewport" style="height:550.667px;">
+                    <div class="filckity-slider" style="left:0px;transform:translateX(0px);">
+
+                        <div id="block-1554246782998" class="ShopTheLook__Item Carousel__Cell is-selected" style="position:absolute;left:0px;">
+                            <div class="ShopTheLook__Inner">
+                                <div class="ShopTheLook__ImageWrapper" style="width:413px; height: 550.567px;">
+                                    <div class="AspectRatio AspectRatio--withFallback" style="max-width:1600px;padding-bottom:133.3125%;--aspecr-ratio:0.750112172058134083;">
+                                        <img src="~/Assets/images/otherphoto/IMG_0734_1200x.progressive.jpg" alt="" class="ShopTheLook__Image Image--fadeIn laztautosize Image--lazyLoaded" sizes="413px">
+                                        <!-- 這邊有很多 -->
+                                    </div>
+                                    <!-- 記得點點要改位置或隱藏 -->
+                                    <span id="ShopTheLook__Dot1" class="ShopTheLook__Dot ShopTheLook__Dot--light is--active" style="left:73%;top:57%;">
+                                    </span>
+                                    <span id="ShopTheLook__Dot2" class="ShopTheLook__Dot ShopTheLook__Dot--light " style="left:66%;top:37%;">
+                                    </span>
+
+                                </div>
+                                <div class="ShopTheLook__ProductList Carousel Carousel--fadeIn hidden-pocket flickity-enabled" tabindex="0">
+                                    <div class="flickity-viewport" style="height:313.6px;">
+                                        <div class="flickity-slider" style="left:0px;transform:translatr(0%);">
+                                            <div class="ShopTheLook__ProductItem Carousel__Cell is-selected" style="position:absolute;left:0%;">
+                                                <div class="ProductItem">
+                                                    <div class="ProductItem__Wrapper">
+                                                        <a href="" class="ProductItem__ImageWrapper ProductItem__ImageWrapper--withAlternateImage ">
+                                                            <!-- <div class="AspectRatio AspectRatio--withFallback" style="max-width:1050px;padding-bottom:100.0%;--aspcet-ratio:1.0;"> -->
+                                                            <img src="~/Assets/images/Necklaces/4_5400f2af-b2e2-4fc0-9d7a-14cd08bec319_900x.jpg" alt="八芒星圓片吊飾純銀項鍊" class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded" sizes="250px">
+                                                            <img src="~/Assets/images/Necklaces/N19403_900x.jpg" alt="八芒星圓片吊飾純銀項鍊" class="ProductItem__Image ProductItem__Image--alternate Image--fadeIn lazyautosizes Image--lazyLoaded" sizes="250px">
+                                                            <span class="Image__Loader"></span>
+                                                            <!-- </div> -->
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ProductItem__Info ProductItem__Info--center">
+                                        <h2 class="ProductItem__Title Heading">
+                                            <a href="">八芒星圓片吊飾純銀項鍊</a>
+                                        </h2>
+                                        <div class="ProductItem__PriceList Heading">
+                                            <span class="ProductItem__Price Price Text--subdued">
+                                                <span>
+                                                    $3,300 TWD
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="ShopTheLook__ViewButton Button Button--primary Button--full">
+                                        VIEW THIS PRODUCT
+                                    </a>
+                                    <ol class="flickity-page-dots">
+                                        <li id="dottodot1" class="dottodot is-selected"></li>
+                                        <li id="dottodot2" class="dottodot"></li>
+                                    </ol>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+                        <!-- ID跟內容都要補 -->
+
+
+                    </div>
+
+                </div>
+
+                <button class="flickity-prev-next-button previous" type="button" aria-label="previous"><svg viewBox="0 0 100 100"><path d="M 20,50 L 60,90 L 60,85 L 25,50  L 60,15 L 60,10 Z" class="arrow"></path></svg></button>
+                <button class="flickity-prev-next-button next" type="button" aria-label="next"><svg viewBox="0 0 100 100"><path d="M 20,50 L 60,90 L 60,85 L 25,50  L 60,15 L 60,10 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>
+            </div>
+            <div class="hot-carousel" data-flickity='{ 
+                 "prevNextButtons": false,
+                 "pageDots": false,
+                 "wrapAround": true,
+                 "groupCells": 1,
+                 "autoPlay": true }'>
+
+                <div class="hot-carousel-cell">  <a style="display: block;" href="/Home/ProductDetailPage/15">經典開口設計手環</a></div>
+                <div class="hot-carousel-cell">  <a style="display: block;" href="/Home/ProductDetailPage/19">八芒星圓片吊飾純銀項鍊</a></div>
+                <div class="hot-carousel-cell">  <a style="display: block;" href="/Home/ProductDetailPage/6">雙圈純銀戒指</a></div>
+                <div class="hot-carousel-cell">  <a style="display: block;" href="/Home/ProductDetailPage/20">五顆鋯石戒指</a></div>
+
+                <div class="hot-carousel-cell">  <a style="display: block;" href="/Home/ProductDetailPage/21">LOVE字樣項鍊</a></div>
+
+            </div>
+        </section>
+    </div>
+
+    <!--地點、營業時間區塊-->
+    <div id="shopify-section-1554096090941"
+         class="shopify-section shopify-section__featured-map shopify-section--bordered">
+        <section class="Section Section--spacingNormal" id="section-1554096090941" data-section-type="map"
+                 data-section-id="1554096090941" data-section-settings='{
+                        "apiKey": "",
+                        "mapAddress": "10491台灣台北市中山區南京西路14號",
+                        "zoom": 14,
+                        "markerColor": "#000000"
+                        }'>
+            <div class="Container">
+                <div class="FeaturedMap">
+                    <!-- FeaturedMap__MapContainer Image--lazyLoad Image--fadeIn -->
+                    <div class="FeaturedMap__MapContainer Image--fadeIn Image--lazyLoaded"
+                         data-bg="//cdn.shopify.com/s/files/1/2023/9563/files/ANVI-Store_1500x.png?v=1554253796" style="background-image: url('../Assets/images/index_bottom/ANVI-Store_1500x.png');">
+                        <div class="FeaturedMap__GMap">
+                        </div>
+                    </div>
+                    <div class="FeaturedMap__Info">
+                        <p class="FeaturedMap__Store Heading u-h1">KUMA 誠品南西店</p>
+                        <div class="FeaturedMap__Address Rte">
+                            @*<p><em>10491台灣台北市中山區南京西路14號</em></p>*@
+                            <p><em>30012新竹市香山區五福路二段707號</em></p>
+                        </div>
+                        <div class="FeaturedMap__Hours Rte">
+                            <p>
+                                星期一 <em>11:00&ndash;22:00</em><br>
+                                星期二 <em>11:00&ndash;22:00</em><br>
+                                星期三 <em>11:00&ndash;22:00</em><br>
+                                星期四 <em>11:00&ndash;22:00</em><br>
+                                星期五 <em>11:00&ndash;22:30</em><br>
+                                星期六 <em>11:00&ndash;22:30</em><br>
+                                星期日 <em>11:00&ndash;22:00</em>
+                            </p>
+                            <p>*國定假日營業時間可能有變動</p>
+                        </div>
+                        <a href="https://maps.google.com?daddr=30012新竹市香山區五福路二段707號" target="_blank"
+                           rel="nofollow" class="FeaturedMap__Location Button Button--primary">
+                            Get directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--下方輪播死刻區-->
+    <div id="shopify-section-1550267340491" class="shopify-section shopify-section--bordered">
+        <section class="Section Section--spacingNormal" data-section-id="1550267340491"
+                 data-section-type="instagram">
+            <section class="SectionHeader SectionHeader--center">
+                <div class="Container">
+                    @*文字@anvistudios*@
+                    <h2 class="SectionHeader__Heading Heading u-h1">kumastudios</h2>
+                </div>
+            </section>
+            <!-- <div class="Instafeed Carousel Carousel--fixed"
+                data-access-token="4678397831.69f4fcc.e73b22ad5d164e799e5a444e5c8dea3c" data-image-count="20"
+                data-flickity-config="{ &quot;wrapAround&quot;: true, &quot;pageDots&quot;: false, &quot;setGallerySize&quot;: false, &quot;prevNextButtons&quot;: true, &quot;arrowShape&quot;: {&quot;x0&quot;: 20, &quot;x1&quot;: 60, &quot;y1&quot;: 40, &quot;x2&quot;: 60, &quot;y2&quot;: 35, &quot;x3&quot;: 25} } "> -->
+            <!-- data-access-token="4678397831.69f4fcc.e73b22ad5d164e799e5a444e5c8dea3c" data-image-count="20" -->
+            <div class="Instafeed Carousel Carousel--fixed" data-flickity='{
+                            "wrapAround": true,
+                            "pageDots": false,
+                            "setGallerySize": false,
+                            "prevNextButtons": true,
+                            "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+                            }'>
+
+                <a href="https://www.instagram.com/p/BxMutYWn89Z/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/8952430e3f9c4296c898301a4e77fbe0/5D7A5D3E/t51.2885-15/sh0.08/e35/s640x640/58408948_454008248680096_3075348323372611661_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/58408948_454008248680096_3075348323372611661_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>83 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            KUMA #Chokers
+                            天氣漸暖而露出的頸部怎能空盪盪呢，快為夏季造型做準備！！經典款頸鍊點亮自己的夏日造型💛
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月8日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/ByAJzviH9yp/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/00fdd8e40a32b419dc9819e120815252/5D82E8D8/t51.2885-15/sh0.08/e35/s640x640/60586131_2403364846655572_500143579958144463_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60586131_2403364846655572_500143579958144463_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>59 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            Shop at www.anvistudios.com
+                            -
+                            #KUMA #日常輕珠寶
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月28日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Bx9zb4mnVzv/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/0ab42d6ba4f15b7d8b0a1f570430f2ff/5D8949D2/t51.2885-15/sh0.08/e35/s640x640/61493875_314104312823980_2226569064217964948_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/61493875_314104312823980_2226569064217964948_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>60 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            戴上KUMA經典設計項鍊，迎接全新的一周吧！
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月27日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Bx9NYnPnt6U/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/26b9ee34a6f0bd7d41f6dfb0f8b6ca31/5D7C8033/t51.2885-15/sh0.08/e35/s640x640/60314896_154708188907678_462440897522592306_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60314896_154708188907678_462440897522592306_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>116 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            做一條專屬於自己的項鍊、勉勵一項自己達成的成就🎉
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月27日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Bx4wD-xHPA3/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/57e748304e37ed836bd8ccc246dee39e/5D8C799B/t51.2885-15/sh0.08/e35/s640x640/60153947_2859554490753679_8177139773378900992_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60153947_2859554490753679_8177139773378900992_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>70 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            亮眼的鋯石耳環自帶光芒！
+                            扣上耳朵迷人光彩便從髮絲間若隱若現，耀眼奪目✨
+                            -
+                            Shop at www.anvistudios.com
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月25日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Bx2AkdnnZe0/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/b6651875953caaf2df5138c4ad9c3ee3/5CF0EB9E/t51.2885-15/sh0.08/e35/s640x640/59408301_2462332100464480_8043971554256638990_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/59408301_2462332100464480_8043971554256638990_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>85 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            兼具經典與優美樣貌，獨特與專屬的純銀設計首飾，獻給獨一無二的妳。
+                            #拼湊出妳與大眾之間非凡的風格界線
+                            -
+                            shop at www.anvistudios.com
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月24日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxzRwyzHHpW/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/7b95283a053a87c6147e5d491d8dbd08/5D7CE878/t51.2885-15/sh0.08/e35/s640x640/60033714_2357110181232742_3713466801030861898_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60033714_2357110181232742_3713466801030861898_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>58 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            日常精緻飾品，令人目不轉睛的秘密武器👀
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月23日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxxBHDhnDzU/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/38d0d49c5e075b1baa4dc81cd6461d91/5D9E3BE2/t51.2885-15/sh0.08/e35/s640x640/61367989_640350909710062_3988902943564961800_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/61367989_640350909710062_3988902943564961800_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>73 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            #KUMAGirloftheday @@bonnie60536 ✨
+                            選擇簡約、實搭的飾品，不需費時搭配也能天天把自己打扮得美美的！
+                            -
+                            #AGOTD
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月22日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxuLKE2HM3K/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/e76329f28ffbd4c903ebe71096291f9a/5D7A6619/t51.2885-15/sh0.08/e35/s640x640/59464622_1621652931299924_7870368738737294946_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/59464622_1621652931299924_7870368738737294946_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>48 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            18K Gold 色澤定義女人美的模樣✨
+                            -
+                            #KUMA #18kGoldVermeil
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月21日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxrzHvkHd5P/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/706c05257b52051ddc47ce13e0e6cd02/5D81A69F/t51.2885-15/sh0.08/e35/s640x640/59650179_2439365032949750_6589394156664737210_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/59650179_2439365032949750_6589394156664737210_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>89 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            Dare to be fabulous🌟
+                            -
+                            shop now at www.anvistudios.com
+                            -
+                            #18KGold
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月20日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxpUcjjnTuj/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/0b4df3f215aecbe97a73a4bb05388f04/5D82B61D/t51.2885-15/sh0.08/e35/s640x640/60174975_423542388486826_2442621513737242742_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60174975_423542388486826_2442621513737242742_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>90 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            精緻的手工銀飾、獨特的設計款式，我的優雅來自KUMA
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月19日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxohTPVHypn/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/8fd46588fcd1858bee11a491e1855636/5D8AB8D5/t51.2885-15/sh0.08/e35/s640x640/59679354_487267032013846_2197648158506025267_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/59679354_487267032013846_2197648158506025267_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>80 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            歐美風格這樣搭，大展妳的迷人層次感
+                            -
+                            #Dailyjewelry
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月19日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Bxj8XzzHTzB/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/899ace5e7ce18c968c96725ca218776d/5D7AF52D/t51.2885-15/sh0.08/e35/s640x640/60610567_183151959269242_6008507028196976423_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60610567_183151959269242_6008507028196976423_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>93 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            「心」急如焚💓
+                            愛要及時，不想等10-14天客製化時間！！！#KUMAStudios
+                            #KUMAPURELOVE
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月17日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxhQF5rn3gy/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/3d5c1f21b3100d742f72d2c67b416ee1/5D96601F/t51.2885-15/sh0.08/e35/s640x640/59431663_596585474176924_7880266255657363150_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/59431663_596585474176924_7880266255657363150_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>124 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            We hope you have fun💛
+                            -
+                            shop now at www.anvistudios.com
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月16日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxewIXvHt2e/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/0006b7548f345d7dcc5db9c8e269e2b1/5D9E7B81/t51.2885-15/sh0.08/e35/s640x640/58410931_2085402001760137_5850707032441569529_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/58410931_2085402001760137_5850707032441569529_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>74 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            KUMA 白金款首飾推薦，白皙美女們的首選！
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月15日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxcERBDHomm/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/01eeea8f1e27c1c3b686bd3bf1f12afa/5D91718B/t51.2885-15/sh0.08/e35/s640x640/58909981_615250318884765_3879079712409729360_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/58909981_615250318884765_3879079712409729360_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>64 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            Shop at www.anvistudios.com
+                            -
+                            善用飾品妝點妳的造型與生活🌟
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月14日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxZkvfNHJEC/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/2e164e3cacf5d1a2a41f8b8b9dacf0fc/5D89C928/t51.2885-15/sh0.08/e35/s640x640/59376457_1128080244046256_5008202893211186296_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/59376457_1128080244046256_5008202893211186296_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>124 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            大放異彩的機會來了！把握好天氣，讓飾品在天然陽光下大肆放閃吧☀️
+                            -
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月13日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxXF8MRHcbT/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/4a637e790a061ffdeaca60c80a9dc843/5D8C37F7/t51.2885-15/sh0.08/e35/s640x640/58812226_373646163255905_1459855121401741577_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/58812226_373646163255905_1459855121401741577_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>114 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            KUMA祝全天下最偉大的媽咪，母親節快樂🌹❤️
+                            -
+                            #HappyMothersDay
+                            #KUMAStudios
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月12日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxUfEYAnWW-/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/d5354cfd372f6bb081c5fc4ffa7eff4e/5D7CA0E2/t51.2885-15/sh0.08/e35/s640x640/57221566_141912496866202_320419068760551931_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/57221566_141912496866202_320419068760551931_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>78 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            #KUMAGirl spotted on the street👀
+                            -
+                            #成為街道上最亮眼的那位✨
+                            #KUMA
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月11日</time>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/BxSDgnBHagn/" rel="nofollow noopener" target="_blank"
+                   class="Carousel__Cell Instafeed__Cell">
+                    <div class="Instafeed__Image Image--zoomOut Image--lazyLoaded" data-expand="10"
+                         data-bg="//scontent.cdninstagram.com/vp/6369e4715a57c0ca2ae0aa2a698d1330/5D78C3EA/t51.2885-15/sh0.08/e35/s640x640/60496820_912492132415702_4235203656358370411_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                         aria-label="Open on Instagram"
+                         style="background-image: url('../Assets/images/index_bottom/60496820_912492132415702_4235203656358370411_n.jpg');">
+                    </div>
+                    <div class="Instafeed__Overlay">
+                        <span class="Instafeed__LikeCount">
+                            <svg class="Icon Icon--heart" viewBox="0 0 17 15" role="presentation">
+                                <path d="M15.0349331 1.40485867C14.1287273.49933787 12.9252477 0 11.6443673 0S9.16000731.49933787 8.25448651 1.40417371c-.01164437.01164436-.02328874.02328873-.03493311.03561806-.01164436-.01232933-.02260377-.02328873-.03424813-.0349331C7.2790995.49933787 6.07561989 0 4.79473949 0 3.51385908 0 2.31037947.49933787 1.40417371 1.40485867.49796794 2.31037947 0 3.51385908 0 4.79473949 0 6.07561989.4986529 7.2790995 1.40417371 8.1846203L8.2195534 15l6.8153797-6.8153797c.9055208-.9055208 1.4041737-2.10900041 1.4041737-3.38988081 0-1.28019545-.4986529-2.48436002-1.4041737-3.38988082z">
+                                </path>
+                            </svg>70 likes
+                        </span>
+                        <p class="Instafeed__Caption">
+                            #HappyMothersDay母親節特獻💝
+                            5/10-5/12至 #KUMA南西誠品一樓專櫃 消費就送玫瑰花禮一舉兩得甜蜜攻陷媽咪的心！
+                            -
+                            #KUMAStudios#花禮每日限量十束🌹
+                        </p><time class="Instafeed__Date Heading u-h6">2019年5月10日</time>
+                    </div>
+                </a>
+            </div>
+
+            <div class="SectionFooter">
+                <a href="http://www.instagram.com/anvistudios" class="Button Button--primary" target="_blank"
+                   rel="noopener">追蹤我們</a>
+            </div>
+        </section>
+    </div><!-- END content_for_index -->
+
+</main>
+
+<script>
+                //$(function () {
+                //    $(".shop").hover(function () {
+                //        $(".MenuList").css("visibility", "visible");
+                //    });
+                //});
+
+                //$(function () {
+                //    $(".new").hover(function () {
+                //        $(".MenuList").css("visibility", "hidden");
+                //    });
+                //});
+                //$(function () {
+                //    $(".about_us").hover(function () {
+                //        $(".MenuList").css("visibility", "hidden");
+                //    });
+                //});
+
+                //$(function () {
+                //    $(".MenuList").hover(function () {
+                //        $(".MenuList").css("visibility", "visible");
+                //    }, function () {
+                //        $(".MenuList").css("visibility", "hidden");
+                //    });
+                //});
+                //$(function () {
+                //    $(".topnemu").hover(function () {
+
+                //    }, function () {
+                //        $(".MenuList").css("visibility", "hidden");
+                //    });
+                //});
+                ////應該要寫一個語法合併上面
+
+
+
+
+                //$(window).scroll(function () {
+                //    var scroll = $(window).scrollTop();
+
+                //    if (scroll >= 15) {
+                //        $('#header').addClass('fixed');
+
+                //        $(".topnemu").css("background-color", "#ffffff");
+                //        $(".topnemu").css("color", "#1C1B1B");
+                //        $(".SListItem").css("color", "#1C1B1B");
+                //        $(".username a").css("color", "#1C1B1B");
+                //        $(".search a").css("color", "#1C1B1B");
+                //        $(".topnemu a").css("color", "#1C1B1B");
+                //        $(".topnemulinetwo ul").css("border-bottom", "#dddddd 1px solid");
+                //        $(".LogoImage").css("background-image", "url('/Assets/images/Logo/ANVI-Logo-Black_140x@2x.png')");
+
+
+                //    } else if (scroll == 0) {
+                //        $('#header').removeClass('fixed');
+
+                //        $(".topnemu").css("background-color", "transparent");
+                //        $(".topnemu").css("color", "#ffffff");
+                //        $(".SListItem").css("color", "#ffffff");
+                //        $(".username a").css("color", "#ffffff");
+                //        $(".search a").css("color", "#ffffff");
+                //        $(".topnemu a").css("color", "#ffffff");
+                //        $(".topnemulinetwo ul").css("border-bottom", "#ffffff 1px solid");
+                //        $(".LogoImage").css("background-image", "url('/Assets/images/Logo/ANVI-Logo-White_140x@2x.png')");
+
+
+
+                //    } else {
+                //        $('#header').removeClass('fixed');
+
+                //    }
+
+                //});
+    //});
+</script>

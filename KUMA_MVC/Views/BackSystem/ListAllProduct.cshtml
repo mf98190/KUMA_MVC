@@ -1,0 +1,196 @@
+﻿@model IEnumerable<ANVI_Mvc.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_BackSystem_Layout.cshtml";
+    ViewBag.Title = "產品";
+    int i = 0;    
+}
+
+
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>產品</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">產品</a></li>
+                    <li class="active">產品</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p>
+                            @Html.ActionLink("Create New", "Create", "Products")
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table-export_info">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc text-center" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="@Html.DisplayNameFor(model => model.ProductID): activate to sort column descending" style="width:52px; text-align:center;">
+                                        @Html.DisplayNameFor(model => model.ProductID)
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.Category.CategoryName): activate to sort column ascending" style="width: 184px;">
+                                        @Html.DisplayNameFor(model => model.Category.CategoryName)
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.ProductName): activate to sort column ascending" style="width: 280px;">
+                                        @Html.DisplayNameFor(model => model.ProductName)
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label=" @Html.DisplayNameFor(model => model.UnitPrice): activate to sort column ascending" style="width: 150px;">
+                                        @Html.DisplayNameFor(model => model.UnitPrice)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    i = 1;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    string classstring = string.Empty;
+                                    if (i % 2 == 0)
+                                    {
+                                        classstring = "role=\"row\" class=\"even\"";
+                                    }
+                                    else
+                                    {
+                                        classstring = "role=\"row\" class=\"odd\"";
+                                    }
+                                    <tr @classstring>
+                                        <td class="sorting_1">
+                                            @Html.DisplayFor(modelItem => item.ProductID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                                        </td>
+                                        <td style="width: 150px;">
+                                            @Html.ActionLink("Edit", "Edit", "Products", new { id = item.ProductID }, new { @class = "" }) |
+                                            @Html.ActionLink("Details", "Details", "Products", new { id = item.ProductID }, new { @class = "" }) |
+                                            @Html.ActionLink("Delete", "Delete", "Products", new { id = item.ProductID }, new { @class = "" })
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div><!-- .animated -->
+</div>
+
+@section endJS{
+
+    <script src="~/Assets/BackSystem/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/Assets/BackSystem/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/Assets/BackSystem/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="~/Assets/BackSystem/assets/js/init-scripts/data-table/datatables-init.js"></script>
+}
+
+
+@*<h2>ListAllProduct</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", "Products")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Products", new { id = item.ProductID }, new { @class = "" }) |
+                    @Html.ActionLink("Details", "Details", "Products", new { id = item.ProductID }, new { @class = "" }) |
+                    @Html.ActionLink("Delete", "Delete", "Products", new { id = item.ProductID }, new { @class = "" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            @{
+                int previous = (int)ViewData["PageActive"];
+                int next = (int)ViewData["PageActive"];
+                if ((int)ViewData["PageActive"] != 1)
+                {
+                    --previous;
+                }
+                if((int)ViewData["PageActive"] != (int)ViewData["Pages"])
+                {
+                    ++next;
+                }
+            }
+            <li class="page-item"><a class="page-link" href="/BackSystem/ListAllProduct/@previous">Previous</a></li>
+            @for (int i = 1; i <= (int)ViewData["Pages"]; i++)
+            {
+                string active = i == (int)ViewData["PageActive"] ? "active" : "";
+
+                <li class="page-item @active"><a class="page-link" href="/BackSystem/ListAllProduct/@i">@i</a></li>
+            }
+            <li class="page-item"><a class="page-link" href="/BackSystem/ListAllProduct/@next">Next</a></li>
+        </ul>
+    </nav>*@

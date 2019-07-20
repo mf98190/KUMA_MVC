@@ -1,0 +1,661 @@
+﻿@using KUMA_MVC.Services
+@{
+    var currentCart = CartService.GetCurrentCart();
+}
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kuma</title>
+
+    @*
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
+    <!-- bootstrap 4.2.1 -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Titillium+Web" rel="stylesheet"> -->
+    <!-- google字體 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="~/Assets/css/PartialCar.css" />
+    <link href="~/Assets/css/header-styles.css" rel="stylesheet" />
+    <link href="~/Assets/css/header_style_black.css" rel="stylesheet" />
+    <link href="~/Assets/css/footer.css" rel="stylesheet" />
+    <!-- CSS檔引入 -->
+    <link rel="shortcut icon" href="~/Assets/images/Logo/ANVI_FAVICON_32x32.png" type="image/png">
+    @RenderSection("topCSS", false)
+    @RenderSection("topJS", false)
+
+
+</head>
+<body>
+    <!--浮動視窗的黑色半透明背景-->
+    <div id="PageOverBlack" class="PageOverlay"></div>
+
+    @*購物車浮動視窗*@
+    <div id="sidebar-cart"
+         class="Drawer Drawer--fromRight"
+         aria-hidden="true"
+         data-section-id="cart"
+         data-section-type="cart"
+         data-section-settings='{
+            "type": "drawer",
+            "itemCount": 1,
+            "drawer": true,
+            "hasShippingEstimator": false
+          }'>
+        <div id="closecart" class="Drawer__Header Drawer__Header--bordered Drawer__Container">
+            <span class="Drawer__Title Heading u-h4">購物車</span>
+
+            <button id="closecart"
+                    class="Drawer__Close Icon--clickable"
+                    data-action="close-drawer"
+                    data-drawer-id="sidebar-cart"
+                    aria-label="關閉購物車">
+                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
+                    <path d="M15 0L1 14m14 0L1 0"
+                          stroke="currentColor"
+                          fill="none"
+                          fill-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        @Html.Partial("_ShoppingCart")
+    </div>
+
+    <!--黑色RWD-->
+    <div id="shopify-section-sidebar-menu" class="shopify-section">
+        <section id="sidebar-menu" class="SidebarMenu Drawer Drawer--small Drawer--fromLeft" aria-hidden="true"
+                 data-section-id="sidebar-menu" data-section-type="sidebar-menu" style="max-height: 975px;" tabindex="-1">
+            <header class="Drawer__Header" data-drawer-animated-left="">
+                <button id="sidebar-menu-close" class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer"
+                        data-drawer-id="sidebar-menu" aria-label="Close navigation">
+                    <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
+                        <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </header>
+
+            <div class="Drawer__Content">
+                <div class="Drawer__Main" data-drawer-animated-left="" data-scrollable="">
+                    <div class="Drawer__Container">
+                        <nav class="SidebarMenu__Nav SidebarMenu__Nav--primary" aria-label="Sidebar navigation">
+
+                            <div class="Collapsible">
+                                <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible"
+                                        aria-expanded="false">
+                                    商店 <span class="Collapsible__Plus"></span>
+                                </button>
+                                <div class="Collapsible__Inner">
+                                    <div class="Collapsible__Content">
+                                        @*<div class="Collapsible">
+                                                <button class="Collapsible__Button Heading Text--subdued Link--primary u-h7" data-action="toggle-collapsible" aria-expanded="false">
+                                                    全部 <span class="Collapsible__Plus"></span>
+                                                </button>
+
+                                                <div class="Collapsible__Inner">
+                                                    <div class="Collapsible__Content">
+                                                        <ul class="Linklist_black Linklist--bordered Linklist--spacingLoose">
+                                                            <li class="Linklist__Item_black">
+                                                                <a href="#"
+                                                                   class="Text--subdued Link Link--primary">發燒新品</a>
+                                                            </li>
+                                                            <li class="Linklist__Item_black">
+                                                                <a href="#"
+                                                                   class="Text--subdued Link Link--primary">人氣商品</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        <div class="Collapsible">
+                                            <button class="Collapsible__Button Heading Text--subdued Link--primary u-h7"
+                                                    data-action="toggle-collapsible" aria-expanded="false">
+                                                類別 <span class="Collapsible__Plus"></span>
+                                            </button>
+
+                                            <div class="Collapsible__Inner">
+                                                <div class="Collapsible__Content">
+                                                    <ul class="Linklist_black Linklist--bordered Linklist--spacingLoose">
+                                                        <li class="Linklist__Item_black">
+                                                            <a href="/Home/ProductsPage/"
+                                                               class="Text--subdued Link Link--primary">全部商品</a>
+                                                        </li>
+                                                        <li class="Linklist__Item_black">
+                                                            <a href="/Home/ProductsPage/Bracelets"
+                                                               class="Text--subdued Link Link--primary">手環</a>
+                                                        </li>
+                                                        <li class="Linklist__Item_black">
+                                                            <a href="/Home/ProductsPage/EarRings"
+                                                               class="Text--subdued Link Link--primary">耳環</a>
+                                                        </li>
+                                                        <li class="Linklist__Item_black">
+                                                            <a href="/Home/ProductsPage/Necklaces"
+                                                               class="Text--subdued Link Link--primary">項鍊</a>
+                                                        </li>
+                                                        <li class="Linklist__Item_black">
+                                                            <a href="/Home/ProductsPage/Rings"
+                                                               class="Text--subdued Link Link--primary">戒指</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Collapsible">
+                                <a href="/Home/ProductsPage/All"
+                                   class="Collapsible__Button Heading Link Link--primary u-h6">最新到貨</a>
+                            </div>
+
+                            <div class="Collapsible">
+                                <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible"
+                                        aria-expanded="false">
+                                    Other <span class="Collapsible__Plus"></span>
+                                </button>
+                                <div class="Collapsible__Inner">
+                                    <div class="Collapsible__Content">
+                                        <div class="Collapsible">
+                                            <a href="/Other/Shipping"
+                                               class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">
+                                                運送須知
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="Collapsible__Content">
+                                        <div class="Collapsible">
+                                            <a href="/Other/Returns"
+                                               class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">
+                                                退/換貨須知
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="Collapsible__Content">
+                                        <div class="Collapsible">
+                                            <a href="/Other/TermsConditions"
+                                               class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">
+                                                隱私政策
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="Collapsible__Content">
+                                        <div class="Collapsible">
+                                            <a href="/Other/Privacy"
+                                               class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">
+                                                服務條款
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="Collapsible__Content">
+                                        <div class="Collapsible">
+                                            <a href="/Other/About"
+                                               class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">
+                                                關於我們
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="SidebarMenu__Nav SidebarMenu__Nav--secondary">
+                            <ul class="Linklist_black Linklist--spacingLoose">
+                                <li class="Linklist__Item_black">
+                                    <a href="/Home/AccountPage" class="Text--subdued Link Link--primary">Account</a>
+                                </li>
+                                <li class="Linklist__Item_black">
+                                    <a href="/Search/SearchIndex" class="Text--subdued Link Link--primary" data-action="open-modal"
+                                       aria-controls="Search">Search</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <aside class="Drawer__Footer" data-drawer-animated-bottom="">
+                    <ul class="SidebarMenu__Social HorizontalList HorizontalList--spacingFill">
+                        <li class="HorizontalList__Item">
+                            <a href="https://www.facebook.com/anvistudios" class="Link Link--primary" target="_blank"
+                               rel="noopener" aria-label="Facebook">
+                                <span class="Icon-Wrapper--clickable">
+                                    <svg class="Icon Icon--facebook" viewBox="0 0 9 17">
+                                        <path d="M5.842 17V9.246h2.653l.398-3.023h-3.05v-1.93c0-.874.246-1.47 1.526-1.47H9V.118C8.718.082 7.75 0 6.623 0 4.27 0 2.66 1.408 2.66 3.994v2.23H0v3.022h2.66V17h3.182z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="HorizontalList__Item">
+                            <a href="https://instagram.com/anvistudios" class="Link Link--primary" target="_blank"
+                               rel="noopener" aria-label="Instagram">
+                                <span class="Icon-Wrapper--clickable">
+                                    <svg class="Icon Icon--instagram" role="presentation" viewBox="0 0 32 32">
+                                        <path d="M15.994 2.886c4.273 0 4.775.019 6.464.095 1.562.07 2.406.33 2.971.552.749.292 1.283.635 1.841 1.194s.908 1.092 1.194 1.841c.216.565.483 1.41.552 2.971.076 1.689.095 2.19.095 6.464s-.019 4.775-.095 6.464c-.07 1.562-.33 2.406-.552 2.971-.292.749-.635 1.283-1.194 1.841s-1.092.908-1.841 1.194c-.565.216-1.41.483-2.971.552-1.689.076-2.19.095-6.464.095s-4.775-.019-6.464-.095c-1.562-.07-2.406-.33-2.971-.552-.749-.292-1.283-.635-1.841-1.194s-.908-1.092-1.194-1.841c-.216-.565-.483-1.41-.552-2.971-.076-1.689-.095-2.19-.095-6.464s.019-4.775.095-6.464c.07-1.562.33-2.406.552-2.971.292-.749.635-1.283 1.194-1.841s1.092-.908 1.841-1.194c.565-.216 1.41-.483 2.971-.552 1.689-.083 2.19-.095 6.464-.095zm0-2.883c-4.343 0-4.889.019-6.597.095-1.702.076-2.864.349-3.879.743-1.054.406-1.943.959-2.832 1.848S1.251 4.473.838 5.521C.444 6.537.171 7.699.095 9.407.019 11.109 0 11.655 0 15.997s.019 4.889.095 6.597c.076 1.702.349 2.864.743 3.886.406 1.054.959 1.943 1.848 2.832s1.784 1.435 2.832 1.848c1.016.394 2.178.667 3.886.743s2.248.095 6.597.095 4.889-.019 6.597-.095c1.702-.076 2.864-.349 3.886-.743 1.054-.406 1.943-.959 2.832-1.848s1.435-1.784 1.848-2.832c.394-1.016.667-2.178.743-3.886s.095-2.248.095-6.597-.019-4.889-.095-6.597c-.076-1.702-.349-2.864-.743-3.886-.406-1.054-.959-1.943-1.848-2.832S27.532 1.247 26.484.834C25.468.44 24.306.167 22.598.091c-1.714-.07-2.26-.089-6.603-.089zm0 7.778c-4.533 0-8.216 3.676-8.216 8.216s3.683 8.216 8.216 8.216 8.216-3.683 8.216-8.216-3.683-8.216-8.216-8.216zm0 13.549c-2.946 0-5.333-2.387-5.333-5.333s2.387-5.333 5.333-5.333 5.333 2.387 5.333 5.333-2.387 5.333-5.333 5.333zM26.451 7.457c0 1.059-.858 1.917-1.917 1.917s-1.917-.858-1.917-1.917c0-1.059.858-1.917 1.917-1.917s1.917.858 1.917 1.917z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="PageContainer">
+
+        <div class="topnews">全台免運費 | 海外滿 $4500 免運費</div>
+        <div id="header" class="shopify-section--header">
+            <div class="topnemu Header">
+                <div class="topnemulineone Header__Wrapper">
+                    <div class="Header__FlexItem Header__FlexItem--fill">
+
+                        <div class="SocialList Header__CurrencySelector Text--subdued Heading Link Link--primary u-h8 hidden-pocket hidden-lap">
+                            <ul class="SocialList">
+                                <li class="SListItem">
+                                    <a href="https://www.facebook.com/anvistudios" class="" target="_blank" rel="noopener" aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="SListItem">
+                                    <a href="https://instagram.com/anvistudios" class="" target="_blank" rel="noopener" aria-label="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--RWD的BUTTON-->
+                        <button id="open-drawer-btn" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-desk"
+                                aria-expanded="false" data-action="open-drawer" data-drawer-id="sidebar-menu"
+                                aria-label="Open navigation">
+                           
+                                <span class="hidden-tablet-and-up">
+                                    <svg class="Icon Icon--nav" role="presentation" viewBox="0 0 20 14">
+                                        <path d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z" fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                                <span class="hidden-phone">
+                                    <svg class="Icon Icon--nav-desktop" role="presentation" viewBox="0 0 24 16">
+                                        <path d="M0 15.985v-2h24v2H0zm0-9h24v2H0v-2zm0-7h24v2H0v-2z" fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                        </button>
+                    </div>
+                    <div class="Header__FlexItem">
+                        <a href="/Home/index">
+                            <div class="LogoImage LogoImage--primaty Header__Logo" src=""></div>
+                        </a>
+                    </div>
+
+                    <!-- 圖片記得改響應式 -->
+                    <div class="Header__FlexItem Header__FlexItem--fill">
+                        <div class="userlist hidden-pocket hidden-lap">
+
+                            <nav class="topnemulinenav">
+                                <ul class="lineonelist">
+                                    <li class="account"> <a href="/Home/AccountPage">帳號</a></li>
+                                    <li class="search"><a href="/Search/SearchIndex">搜尋</a></li>
+                                    <li class="cart"> <a href="/Cart/ShoppingCart" id="cart" data-action="open-drawer" data-drawer-id="sidebar-cart">購物車(<snap class="header_cartcount">@currentCart.Count</snap>)</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <!--購物車的RWD圖示-->
+                        <a href="/Cart/ShoppingCart" id="carticon" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-desk"
+                           data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="購物車">
+                            <span class="hidden-tablet-and-up">
+                                <svg class="Icon Icon--cart" role="presentation" viewBox="0 0 17 20">
+                                    <path d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span class="hidden-phone">
+                                <svg class="Icon Icon--cart-desktop" role="presentation" viewBox="0 0 19 23">
+                                    <path d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span id="CartDot" class="Header__CartDot"></span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <nav class="topnemulinetwo">
+
+                    <ul class="linetwolist hidden-pocket hidden-lap">
+                        <li class="shop"><a href="/Home/ProductsPage/All">商店<div class="listspan"></div><span class="lineofselect"></span></a></li>
+                        <li class="new"><a href="/Home/ProductsPage/All">最新到貨<div class="listspan"></div><span class="lineofselect"></span></a></li>
+                        <li class="about_us"><a href="/Other/About">關於我們<div class="listspan"></div><span class="lineofselect"></span></a></li>
+                    </ul>
+                </nav>
+
+                <div class="MenuList hidden-pocket hidden-lap">
+                    @* <<暫時先忽略 *@
+                    <div class="MegaMenu__">
+                        <div class="MegaMenu__Item">
+                            <a href="#" class="class">全部</a>
+                            <ul class="">
+                                <li class="">
+                                    <a href="#" class="">發燒新品</a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="">人氣商品</a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="">SALE</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="MegaMenu__Item">
+                            <a href="#" class="class">類別</a>
+                            <ul class="">
+                                <li class="">
+                                    <a href="/Home/ProductsPage/Bracelets" class="bra">手環</a>
+                                </li>
+                                <li class="">
+                                    <a href="/Home/ProductsPage/Ear Rings" class="ear">耳環</a>
+                                </li>
+                                <li class="">
+                                    <a href="/Home/ProductsPage/Necklaces" class="neck">項鍊</a>
+                                </li>
+                                <li class="">
+                                    <a href="/Home/ProductsPage/Rings" class="rain">戒指</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="MegaMenu__Item">
+
+                            <div class="MegaMenu__Push ">
+                                <div class="MegaMenu__PushImageWrapper product__categories AspectRatio">
+
+                                </div>
+                                <span class="Image__Loader"></span>
+                                @*<p class="MegaMenu__PushHeading h6 product__h6">手鍊</p>*@
+                            </div>
+                        </div>
+                        <div class="MegaMenu__Item">
+
+                            <div class="MegaMenu__Push ">
+                                <div class="MegaMenu__PushImageWrapper AspectRatio">
+
+                                </div>
+                                <span class="Image__Loader"></span>
+                                <p class="MegaMenu__PushHeading h6">ANVI GIRL 摩登，經典，優雅的存在</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @RenderBody()
+
+        <div id="shopify-section-footer" class="shopify-section shopify-section--footer">
+            <footer id="section-footer" class="Footer  " role="contentinfo">
+                <div class="footer__Container">
+                    <div class="Footer__Block Footer__Block--text">
+                        <h2 class="Footer__Title Heading u-h6">關於KUMA</h2>
+                        <div class="Footer__Content Rte">
+                            <p>
+                                KUMA Studios為新創銀飾品牌，專為對於品味與時尚有所追求的女性，打造極簡、質感、富含女性魅力的精緻飾品。
+                            </p>
+                            <p>
+                                KUMA相信每位女性都有天生魅力、個人風格，而表態就該由天天配戴的飾品開始。KUMA Studios承襲多年的精品工藝，擅長製作頂尖質感，揉合現代設計風格與時尚外型，為女人畫龍點睛，高貴飾品不該只放在展間，應以合理售價取得並作為日常不可或缺的單品。
+                            </p>
+                            <p>KUMA Girl為摩登、經典、優雅的代名詞。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Footer__Block Footer__Block--links">
+                    <div class="footer__Container">
+
+                        <h2 class="Footer__Title Heading u-h6 ChangeTitle">Main Footer menu</h2>
+
+                        <ul class="Linklist ">
+                            <li class="Linklist__Item ChangeTitle">
+                                <a href="/Other/Shipping" class="Link Link--primary">運送須知</a>
+                            </li>
+                            <li class="Linklist__Item ChangeTitle">
+                                <a href="/Other/Returns" class="Link Link--primary">退/換貨須知</a>
+                            </li>
+                            <li class="Linklist__Item ChangeTitle">
+                                <a href="/Other/TermsConditions" class="Link Link--primary">隱私政策</a>
+                            </li>
+                            <li class="Linklist__Item ChangeTitle">
+                                <a href="/Other/Privacy" class="Link Link--primary">服務條款</a>
+                            </li>
+                            <li class="Linklist__Item ChangeTitle">
+                                <a href="/Other/About" class="Link Link--primary">聯絡我們</a>
+                            </li>
+                        </ul>
+                        <div class="linebot__text ChangeTitle">
+                            <h2 class="Footer__Title Heading u-h6">  加入我們LINE得知更多小道消息吧!</h2>
+                            <h2 class="Footer__Title Heading u-h6">  LINE官方帳號 : @@545nfrgg</h2>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="Footer__end">
+                <a href="/Home/Index" class="Footer__StoreName Heading u-h7 Link Link--secondary">© KUMA | 日常輕珠寶成就女性迷人魅力</a>
+            </div>
+            <div class="Footer__end">
+                <a href="/BackSystem/Index">&nbsp;</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/Assets/js/jquery-3.3.1.js"></script>
+    <!--header-->
+    <script>
+        $(function () {
+            $(".shop").hover(function () {
+                $(".MenuList").css("visibility", "visible");
+            });
+        });
+
+        $(function () {
+            $(".new").hover(function () {
+                $(".MenuList").css("visibility", "hidden");
+            });
+        });
+        $(function () {
+            $(".about_us").hover(function () {
+                $(".MenuList").css("visibility", "hidden");
+            });
+        });
+
+        $(function () {
+            $(".MenuList").hover(function () {
+                $(".MenuList").css("visibility", "visible");
+            }, function () {
+                $(".MenuList").css("visibility", "hidden");
+            });
+        });
+        $(function () {
+            $(".topnemu").hover(function () {
+
+            }, function () {
+                $(".MenuList").css("visibility", "hidden");
+            });
+        });
+
+        $(function () {
+            $(".bra").hover(function () {
+                $(".product__categories").css("background-image", "url(/Assets/images/Bracelets/2_fae8f255-1152-4a34-8c7b-54b8f3033a87_900x.jpg)");
+            });
+        });
+        $(function () {
+            $(".ear").hover(function () {
+                $(".product__categories").css("background-image", "url(/Assets/images/EarRings/G3_a94660c7-92de-46e5-966d-617f55f9d59e_900x.jpg)");
+            });
+        });
+        $(function () {
+            $(".neck").hover(function () {
+                $(".product__categories").css("background-image", "url(/Assets/images/Necklaces/3_3_2e459b5c-083d-4682-9861-2718a9292092_900x.jpg)");
+            });
+        });
+        $(function () {
+            $(".rain").hover(function () {
+                $(".product__categories").css("background-image", "url(/Assets/images/Rings/1_0fe82ab3-bb99-4711-96c4-b47f2b1d25ac_900x.jpg)");
+            });
+        });
+        //應該要寫一個語法合併上面
+
+        ////這邊下面寫滾動卷軸動作
+        //$(function () {
+        //    $(window).scroll(function () {
+        //        var scroll = $(window).scrollTop();
+
+        //        if (scroll >= 15) {
+        //            $('#header').addClass('fixed');
+
+
+
+        //        } else {
+        //            $('#header').removeClass('fixed');
+
+
+        //        }
+        //    });
+        //});
+    </script>
+
+    <!-- 網頁變數 -->
+    <script>
+        /* 網頁變數 */
+        browser_window();
+        window.addEventListener("resize", browser_window);
+
+        function browser_window() {
+            document.documentElement.style.setProperty("--window-height", window.innerHeight + "px");
+
+            document.documentElement.style.setProperty("--announcement-bar-height", document.getElementsByClassName("topnews")[0].offsetHeight + "px");
+
+            document.documentElement.style.setProperty("--header-height", document.getElementById("header").offsetHeight + "px");
+        }
+    </script>
+
+    <!--html的scroll-->
+    <script>
+        var htmlpart = document.getElementsByTagName("html")[0];
+
+        function html_no_scroll() {
+            $("html").addClass("no-scroll");
+        }
+
+        function html_scroll() {
+            $("html").removeClass("no-scroll");
+        }
+
+    </script>
+
+    <!--RWD--BUTTON-->
+    <script>
+
+        $("#open-drawer-btn").on("click", function () {
+            $("#PageOverBlack").addClass("is-visible");
+            html_no_scroll();
+            $(this).attr("aria-expanded", true);
+            $("#sidebar-menu").attr("aria-hidden", false);
+        });
+
+        $("#sidebar-menu-close").on("click", sidebar_menu_close);
+
+        function sidebar_menu_close() {
+            $("#PageOverBlack").removeClass("is-visible");
+            html_scroll();
+            $(this).attr("aria-expanded", false);
+            $("#sidebar-menu").attr("aria-hidden", true);
+        }
+
+        $(window).click(function (event) {
+            if (event.target == PageOverBlack) {
+                sidebar_menu_close();
+            }
+        });
+
+    </script>
+
+    <!--黑色Menu的li-->
+    <script>
+        var bigblackmenu = $("Button.Collapsible__Button.u-h6");
+        var midblackmenu = $("Button.Collapsible__Button.u-h7");
+        var bigblackmenuli = $("Button.Collapsible__Button.u-h6+.Collapsible__Inner");
+        var midblackmenuli = $("Button.Collapsible__Button.u-h7+.Collapsible__Inner");
+
+        /*開啟、關閉*/
+        for (var i = 0; i < $("Button.Collapsible__Button.Heading.u-h6").length; i++) {
+            $(bigblackmenu[i]).on("click", function () {
+                for (var j = 0; j < $("Button.Collapsible__Button.Heading.u-h6").length; j++) {
+                    if (bigblackmenu[j] == this) {
+                        if ($(bigblackmenu[j]).attr("aria-expanded") == "false") {
+                            $(this).attr("aria-expanded", true);
+                            $(bigblackmenuli[j]).css({ "overflow": "visible", "height": "auto" });
+                        }
+                        else {
+                            $(this).attr("aria-expanded", false);
+                            $(bigblackmenuli[j]).css({ "overflow": "hidden", "height": "0px" });
+                        }
+                    }
+                    else {
+                        $(bigblackmenu[j]).attr("aria-expanded", false);
+                        $(bigblackmenuli[j]).css({ "overflow": "hidden", "height": "0px" });
+                    }
+                }
+            });
+        }
+
+        for (var i = 0; i < $("Button.Collapsible__Button.Heading.u-h7").length; i++) {
+            $(midblackmenu[i]).on("click", function () {
+                for (var j = 0; j < $("Button.Collapsible__Button.Heading.u-h7").length; j++) {
+                    if (midblackmenu[j] == this) {
+                        if ($(midblackmenu[j]).attr("aria-expanded") == "false") {
+                            $(this).attr("aria-expanded", true);
+                            $(midblackmenuli[j]).css({ "overflow": "visible", "height": "auto" });
+                        }
+                        else {
+                            $(this).attr("aria-expanded", false);
+                            $(midblackmenuli[j]).css({ "overflow": "hidden", "height": "0px" });
+                        }
+                    }
+                    else {
+                        $(midblackmenu[j]).attr("aria-expanded", false);
+                        $(midblackmenuli[j]).css({ "overflow": "hidden", "height": "0px" });
+                    }
+                }
+            });
+        }
+    </script>
+
+    <!--購物車RWD的有物品狀態-->
+    <script>
+        console.log($("#CartDot"));
+        if (@currentCart.Count> 0) {
+            $("#CartDot").addClass("is-visible");
+        }
+        else {
+            $("#CartDot").removeClass("is-visible");
+        }
+    </script>
+
+
+    @RenderSection("endJS", false)
+
+    @*---------------------讀進LineBot----------------------*@
+    <script src="~/Assets/js/ChatBot.js"></script>
+    <script src="~/Assets/js/footer-cart.js"></script>
+</body>
+</html>
+

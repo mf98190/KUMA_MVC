@@ -1,0 +1,94 @@
+﻿@model List<SidebarItem>
+
+<nav class="navbar navbar-expand-sm navbar-default">
+
+    <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="/BackSystem/Index">
+            <img src="~/Assets/images/Logo/ANVI-Logo-White_140x@2x.png" alt="Logo" />
+        </a>
+        <a class="navbar-brand hidden" href="/BackSystem/Index">
+            <img src="~/Assets/images/Logo/ANVI-Logo-White_140x@2x.png" alt="Logo">
+        </a>
+    </div>
+
+    <div id="main-menu" class="main-menu collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="/BackSystem/Index"> <i class="menu-icon fa fa-dashboard"></i>首頁 </a>
+            </li>
+
+            <h3 class="menu-title">資料庫管理</h3><!-- /.menu-title -->
+
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-camera"></i>產品</a>
+                <ul class="sub-menu children dropdown-menu">
+                    @foreach (var item in Model)
+                    {
+                        if (item.SideGroup == (int)ConstantData.SideGroup.product)
+                        {
+                            <li><i class="menu-icon @item.Icon"></i><a href="@item.Url">@item.Name</a></li>
+                        }
+                    }
+                </ul>
+            </li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-shopping-cart"></i>訂單</a>
+                <ul class="sub-menu children dropdown-menu">
+                    @foreach (var item in Model)
+                    {
+                        if (item.SideGroup == (int)ConstantData.SideGroup.order)
+                        {
+                            <li><i class="menu-icon @item.Icon"></i><a href="@item.Url">@item.Name</a></li>
+                        }
+                    }
+                </ul>
+            </li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-user"></i>會員</a>
+                <ul class="sub-menu children dropdown-menu">
+                    @foreach (var item in Model)
+                    {
+                        if (item.SideGroup == (int)ConstantData.SideGroup.Identity)
+                        {
+                            <li><i class="menu-icon @item.Icon"></i><a href="@item.Url">@item.Name</a></li>
+                        }
+                    }
+                </ul>
+            </li>
+           
+            <h3 class="menu-title">圖表</h3><!-- /.menu-title -->
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="menu-icon fa fa-bar-chart"></i>產品相關圖表
+                </a>
+                <ul class="sub-menu children dropdown-menu">
+                    @foreach (var item in Model)
+                    {
+                        if (item.SideGroup == (int)ConstantData.SideGroup.productChart)
+                        {
+                            <li><i class="menu-icon @item.Icon"></i><a href="@item.Url">@item.Name</a></li>
+                        }
+                    }
+                </ul>
+            </li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="menu-icon fa fa-bar-chart"></i>銷售相關圖表
+                </a>
+                <ul class="sub-menu children dropdown-menu">
+                    @foreach (var item in Model)
+                    {
+                        if (item.SideGroup == (int)ConstantData.SideGroup.SalesChart)
+                        {
+                            <li><i class="menu-icon @item.Icon"></i><a href="@item.Url">@item.Name</a></li>
+                        }
+                    }
+                </ul>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+

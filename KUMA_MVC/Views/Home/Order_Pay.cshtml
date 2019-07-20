@@ -1,0 +1,310 @@
+﻿
+@{
+    ViewBag.Title = "Order_Check";
+
+    Layout = "~/Views/Shared/_Layout_ANVI.cshtml";
+    var CartToHere = (bool) ViewBag.CartToHere;
+}
+@section topCSS
+{
+    <link href="~/Assets/css/Order_Customer.css" rel="stylesheet" />
+    <link href="~/Assets/css/Order_Check.css" rel="stylesheet" />
+}
+
+@section endJS
+{
+    <script src="~/Assets/js/Order_Customer.js"></script>
+    <script src="~/Assets/js/Order_pay.js"></script>
+}
+<div class="content">
+    <div class="wrap">
+        <div class="leftview">
+            <div class="main">
+                <div class="main__header">
+                    <a href="#" class="logo">
+                        <img src="~/Assets/images/otherphoto/ANVI_LOGO120.png" alt="ANVI" class="logo_image">
+                    </a>
+                    <!-- <h1 class="">客戶資訊</h1> -->
+                    <ul class="bread-crumb">
+                        @if (CartToHere)
+                        {
+                            <li class="breadcrumb__item">
+                                <a href="/cart" class="breadcrumb__link">購物車</a><i class="fas fa-chevron-right"></i>
+                            </li>
+                        }
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">客戶資訊</span><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">運送方式</span><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">付款方式</span></li>
+                    </ul>
+                </div>
+                <div class="main__content">
+                    <div class="step">
+                        <form action="/Home/Order_Pay" class="edit_checkout" method="post">
+                            <!-- 有用input hidden去記表單 -->
+                            <div class="step__sections">
+                                <div class="section">
+                                    <div class="content-box">
+                                        <div class="content-box__row content-box__row--tight-spacing-vertical">
+                                            <div class="review-block">
+                                                <div class="review-block__inner">
+                                                    <div class="review-block__label">Contact</div>
+                                                    <div class="review-block__content">
+                                                        <bdo dir="ltr">@ViewData["Email"]</bdo>
+                                                    </div>
+                                                </div>
+
+                                                <div class="review-block__link">
+                                                    @*<a href="~/Views/Home/Order_Customer.cshtml" class="link--small">
+                                                        <span aria-hidden="true">Cange</span>
+                                                        <span class="visually-hidden">Change contact information</span>
+                                                    </a>*@
+                                                </div>
+                                            </div>
+
+                                            <div class="review-block">
+                                                <div class="review-block__inner">
+                                                    <div class="review-block__label">Ship&nbspto</div>
+                                                    <div class="review-block__content">
+                                                        <address class="address address--tight">
+                                                            @ViewData["Address"]
+                                                        </address>
+                                                        <!-- 不知道原本這邊為啥會有一個地址元素?不懂 -->
+                                                    </div>
+                                                </div>
+                                                <div class="review-block__link">
+                                                    @*<a href="~/Views/Home/Order_Customer.cshtml" class="link--small">
+                                                        <span aria-hidden="true">Cange</span>
+                                                        <span class="visually-hidden">Change contact information</span>
+                                                    </a>*@
+                                                </div>
+                                            </div>
+
+                                            <div class="review-block">
+                                                <div class="review-block__inner">
+                                                    <div class="review-block__label">Method</div>
+                                                    <div class="review-block__content">
+                                                        <bdo dir="ltr">FREE SHIPPING．</bdo>
+
+
+
+                                                        <strong class="emphasis" aria-hidden="true">免費</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section section--payment-method">
+                                    <div class="section__header">
+                                        <h2 class="section__title">付款方式</h2>
+                                        <P class="section__text">
+                                            All transactions are secure and encrypted.
+                                        </P>
+                                    </div>
+                                    <div class="section__content">
+                                        <div class="content-box">
+                                            <div class="radio-wrapper content-box__row">
+
+
+
+                                                <div class="radio__input">
+                                                    <input type="radio" id="checkout_payment__gateway__6510346263" class="input-radio" name="checkout[payment__gateway]" checked="checked">
+                                                </div>
+                                                <div class="radio__label">
+                                                    <label for="checkout_payment__gateway__6510346263" class="radio__label__primary content-box__emphasis">ATM&nbsp轉帳</label>
+                                                </div>
+
+
+
+
+
+
+                                            </div>
+                                            <div id="checkout_payment__gateway__6510346263" class="radio-wrapper content-box__row content-box__row--secondary">
+                                                <div class="blank-skate">
+                                                    <P>所有訂單幣別均以"新台幣"計算。</P>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="section section--payment-method">
+                                    <div class="section__header">
+                                        <h2 class="section__title">Billing address</h2>
+
+                                    </div>
+                                    <div class="section__content">
+                                        <div class="content-box">
+                                            <div class="radio-wrapper content-box__row">
+
+
+                                                <div class="radio__input">
+                                                    <input value="false" type="radio" id="checkout_different_billing_address__false" class="input-radio" aria-label="FREE SHIPPING" name="Order_Pay_Radio" checked="checked">
+                                                </div>
+
+                                                <label for="checkout_different_billing_address__false" class="radio__label content-box__emphasis">
+                                                    Same as shipping address
+                                                </label>
+
+
+
+                                            </div>
+
+                                            <div class="radio-wrapper content-box__row">
+
+
+                                                <div class="radio__input">
+                                                    <input value="true" type="radio" id="checkout_different_billing_address__true" class="input-radio" aria-label="FREE SHIPPING" name="Order_Pay_Radio">
+                                                </div>
+
+                                                <label for="checkout_different_billing_address__true" class="radio__label content-box__emphasis">
+                                                    Use a different billing address
+                                                </label>
+
+                                            </div>
+                                            <div id="section--billing-address__different" class="radio-group__row content-box__row content-box__row--secondary">
+                                                <div class="fieldset">
+
+                                                    <div class="field ">
+                                                        <div class="field__input-wrapper">
+                                                            <!-- <label class="field__label" for="checkout_shipping_address_last_name">姓氏</label> -->
+                                                            <input type="text" class="field__input" placeholder="姓名" size="30" name="Bill_CustomerName" value="@ViewData["Bill_CustomerName"]" id="checkout_shipping_address_name">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="half-to">
+                                                        <div class="field field--required field--half-city field--show-floating-label" data-address-field="city" data-autocomplete-field-container="true">
+
+                                                            <div class="field__input-wrapper field__input-wrapper--select">
+                                                                <!-- <label class="field__label field__label--visible" for="checkout_shipping_address_city">城市</label> -->
+                                                                <select size="1" class="field__input field__input--select" aria-required="true" name="Bill_City" value="@ViewData["Bill_City"]" id="checkout_shipping_address_city">
+                                                                    <option disabled="disabled" value="---">請選擇</option>
+                                                                    <option value="台北市"> 台北市 </option>
+                                                                    <option value="基隆市"> 基隆市 </option>
+                                                                    <option value="新北市"> 新北市 </option>
+                                                                    <option value="宜蘭縣"> 宜蘭縣 </option>
+                                                                    <option value="新竹市"> 新竹市 </option>
+                                                                    <option value="新竹縣"> 新竹縣 </option>
+                                                                    <option value="桃園縣"> 桃園縣 </option>
+                                                                    <option value="苗栗縣"> 苗栗縣 </option>
+                                                                    <option value="台中市"> 台中市 </option>
+                                                                    <option value="彰化縣"> 彰化縣 </option>
+                                                                    <option value="南投縣"> 南投縣 </option>
+                                                                    <option value="嘉義市"> 嘉義市 </option>
+                                                                    <option value="嘉義縣"> 嘉義縣 </option>
+                                                                    <option value="雲林縣"> 雲林縣 </option>
+                                                                    <option value="台南市"> 台南市 </option>
+                                                                    <option value="高雄市"> 高雄市 </option>
+                                                                    <option value="澎湖縣"> 澎湖縣 </option>
+                                                                    <option value="屏東縣"> 屏東縣 </option>
+                                                                    <option value="台東縣"> 台東縣 </option>
+                                                                    <option value="花蓮縣"> 花蓮縣 </option>
+                                                                    <option value="金門縣"> 金門縣 </option>
+                                                                    <option value="連江縣"> 連江縣 </option>
+                                                                </select>
+
+                                                                <div class="field__caret">
+                                                                    <svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down"></use> </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="field field--half-city">
+                                        <div class="field__input-wrapper">
+                                            <label class="field__label">城市</label>
+                                            <input type="text" class="field__input" id="checkout_shipping_address_city" placeholder="城市" size="30" name="checkout[shipping_address][city]">
+                                        </div>
+                                    </div> -->
+                                                        <div class="field field--half-zip">
+                                                            <div class="field__input-wrapper">
+                                                                <!-- <label class="field__label">郵遞區號</label> -->
+                                                                <input type="text" class="field__input" id="checkout_shipping_address_zip" placeholder="郵遞區號" size="30" name="Bill_ZipCOde" value="@ViewData["Bill_ZipCode"]">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="field">
+                                                        <div class="field__input-wrapper">
+                                                            <!-- <label class="field__label">地址</label> -->
+                                                            <input type="text" class="field__input" id="checkout_shipping_address_address" placeholder="地址" size="30" name="Bill_Address" value="@ViewData["Bill_Address"]">
+                                                        </div>
+                                                    </div>
+                                                    <div class="field">
+                                                        <div class="field__input-wrapper">
+                                                            <!-- <label class="field__label">電話</label> -->
+                                                            <input type="text" class="field__input" id="checkout_shipping_address_phone" placeholder="電話" size="30" name="Bill_Phone" value="@ViewData["Bill_Phone"]">
+                                                            <div id="phone_tooltip" class="field__icon">
+                                                                <!-- <span id="tooltip-for-phone" class="tooltip">
+                                                In case we need to contact you about your order.
+                                            </span>
+                                            <i class="fas fa-question-circle"></i> -->
+
+                                                                <div class="field__icon-svg" data-toggle="tooltip" data-placement="top" title=' In case we need to contact you about your order.'>
+
+                                                                    <i class="fas fa-question-circle"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="step__footer">
+                                <button id="continue_button" class="step__footer__continue-btn btn" type="submit" name="button">
+                                    <!-- loading ICON -->
+                                    <span class="btn__content">完成訂單</span>
+                                </button>
+                                <a href="/Home/Order_Ship" class="step__footer__previous-link">
+                                    <i class="fas fa-chevron-left"></i><span class="step__footer__previous-link__content">返回運送資訊</span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- 一堆SPAN -->
+                <div class="main__footer">
+                    <div>
+                        <ul class="policy-list">
+                            <!-- 做跳出頁面 -->
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Refundpolicy.cshtml">Refund policy</a>
+                            </li>
+
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Privacypolicy.html">Privacy policy</a>
+                            </li>
+
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Termsofservice.html">Terms of service</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="color-right">
+            <div class="rightview">
+                <div class="sidebar" role="complementary">
+                    <!-- <div class="sidebar__header">
+                     <a href="" class="logo">
+                          <h1></h1>
+                     </a>
+                    </div> -->
+                    <div class="sidebar__content">
+                        @Html.Action("getOrderPartial", "Home")
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

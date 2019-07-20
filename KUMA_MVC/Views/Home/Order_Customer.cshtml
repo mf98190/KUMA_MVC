@@ -1,0 +1,304 @@
+﻿@using ANVI_Mvc.Services
+@model OrderCustomerViewModel
+
+@{
+    ViewBag.Title = "Order_Customer";
+    Layout = "~/Views/Shared/_Layout_ANVI.cshtml";
+
+    var currentCart = new CartModel(); //取得目前購物車資料
+    if (CartService.GetCurrentCart() != null) //判斷是否有東西
+    {
+        currentCart = CartService.GetCurrentCart();
+    }
+    //var Img = ViewBag.Img;
+}
+
+@section topCSS
+{
+    <link href="~/Assets/css/Order_Customer.css" rel="stylesheet" />
+    <link href="~/Assets/css/Order_Customer.css" rel="stylesheet" />
+}
+@section endJS
+{
+    <script src="~/Assets/js/Order_Customer.js"></script>
+}
+@*此頁不會出現header!*@
+
+<div class="content">
+    <div class="wrap">
+        <div class="leftview">
+            <div class="main">
+                <div class="main__header">
+                    <a href="#" class="logo">
+                        <img src="~/Assets/images/otherphoto/ANVI_LOGO120.png" alt="ANVI" class="logo_image">
+                    </a>
+                    <!-- <h1 class="">客戶資訊</h1> -->
+                    <ul class="bread-crumb">
+                        @if ((bool)Session["CartToHere"])
+                        {
+                            <li class="breadcrumb__item">
+                                <a href="/Cart/ShoppingCart" class="breadcrumb__link">購物車</a><i class="fas fa-chevron-right"></i>
+                            </li>
+                        }
+
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">客戶資訊</span><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">運送方式</span><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">付款方式</span></li>
+                    </ul>
+                </div>
+                <div class="main__content">
+                    <form action="/Home/Order_Customer" class="edit_checkout" method="post">
+                        <div class="step">
+                            <div class="step__sections">
+                                <div class="section">
+                                    <div class="section__header">
+                                        <div class="layout-flex">
+                                            <h2 id="main-header" class="section__title">客戶資訊</h2>
+                                            @*<p class="layout-flex__item">
+                                                    <span>已擁有帳號?</span>
+                                                    <a href="#">登入</a>
+                                                </p>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_content">
+
+                                    <!-- 會員登入後的樣子 -->
+                                    <!--
+                                    <input value="XXXXXX@gmail.com" size="30" type="hidden" name="checkout[email]" id="checkout_email">
+                                    <div class="logged-in-customer-information">
+                                        <div class="logged-in-customer-information__avatar-wrapper">
+                                            <div class="logged-in-customer-information__avatar gravatar"></div>
+                                        </div>
+
+                                        <p class="logged-in-customer-information__paragraph">
+                                            <span class="page-main__emphasis">哭 碼</span>
+                                            <span>(XXXXXX@gmail.com)</span>
+                                            <br>
+                                            <a href="#">登出</a>
+                                        </p>
+                                    </div> -->
+                                    <!-- 登入前的樣子 -->
+                                    <div class="fieldset">
+                                        <div class="field">
+
+                                            <input value="@ViewData["Email"]" size="30" type="hidden" name="Email" id="checkout_email">
+                                            <div class="logged-in-customer-information">
+                                                <div class="logged-in-customer-information__avatar-wrapper">
+
+
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><title>Artboard</title><g fill="none" fill-rule="evenodd"><path d="M0 0h50v50H0V0z" fill="#D8D8D8" /><path d="M25.103 26.242c3.212 0 5.642-2.92 5.642-6.787 0-3.086-2.58-5.705-5.642-5.705-3.06 0-5.64 2.62-5.64 5.705 0 3.866 2.43 6.787 5.64 6.787zm0-10.54c1.952 0 3.678 1.763 3.678 3.753 0 2.757-1.574 4.835-3.677 4.835-2.103 0-3.677-2.078-3.677-4.835 0-1.99 1.726-3.753 3.677-3.753zm-8.45 20.615l.177-1.877c.39-3.778 4.697-4.61 8.273-4.61 3.577 0 7.884.832 8.274 4.598l.176 1.89h2.015l-.176-2.08c-.44-4.117-4.068-6.384-10.29-6.384-6.22 0-9.846 2.267-10.287 6.397l-.176 2.067h2.014z" fill="#FFF" /></g></svg>
+                                                </div>
+
+                                                <p class="logged-in-customer-information__paragraph">
+                                                    <span class="page-main__emphasis">@ViewData["UserName"]</span>
+                                                    <span>(@ViewData["Email"])</span>
+                                                    <br>
+
+                                                </p>
+                                            </div>
+
+                                            <!-- <div class="field__input"><label for="" class="field__label">電子郵件</label> -->
+                                            @*<input id="checkout_email" class="field__input" type="email" size="30" name="Email" value="@ViewData["Email"]" data-val="true" placeholder="電子郵件">*@
+                                            @*@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @id = "checkout_email",@class = "field__input", @size = "30", @Value = @ViewData["Email"], @placeholder="電子郵件" } })
+                                                @Html.ValidationMessageFor(model => model.Email, "", new { @style = "color:#FF3333" })*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fieldset-description">
+                                    <div class="section__content">
+                                        <div class="checkbox-wrapper">
+                                            <div class="checkbox__input">
+                                                <input id="check_buyer_accepts_marketing" class="input-checkbox" type="checkbox" value="1" name="checkout[buyer_accepts_marketing]">
+                                            </div>
+                                            <label for="check_buyer_accepts_marketing" class="checkbox__label">訂閱我們</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <div class="section__header">
+                                    <h2 class="section__title">運送地址</h2>
+                                </div>
+                                <div class="section__content">
+                                    <div class="fieldset">
+
+                                        @Html.ValidationSummary(true, "", new { @style = "color:#FF3333" })
+                                        <div class="field ">
+                                            <div class="field__input-wrapper">
+                                                <!-- <label class="field__label" for="checkout_shipping_address_last_name">姓氏</label> -->
+                                                @*<input type="text" class="field__input" placeholder="姓名" size="30" name="CustomerName" value="@ViewData["CustomerName"]" id="checkout_shipping_address_name">*@
+                                                @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @id = "checkout_shipping_address_name", @class = "field__input", @size = "30", @Value = @ViewData["CustomerName"], @placeholder = "姓名" } })
+                                                @Html.ValidationMessageFor(model => model.CustomerName, "", new { @style = "color:#FF3333" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="half-to">
+                                            <div class="field field--required field--half-city field--show-floating-label" data-address-field="city" data-autocomplete-field-container="true">
+
+                                                <div class="field__input-wrapper field__input-wrapper--select">
+                                                    <!-- <label class="field__label field__label--visible" for="checkout_shipping_address_city">城市</label> -->
+                                                    <select size="1" class="field__input field__input--select" aria-required="true" name="City" value="@ViewData["City"]" id="checkout_shipping_address_city">
+                                                        <option disabled="disabled" value="---">請選擇</option>
+                                                        <option value="台北市"> 台北市 </option>
+                                                        <option value="基隆市"> 基隆市 </option>
+                                                        <option value="新北市"> 新北市 </option>
+                                                        <option value="宜蘭縣"> 宜蘭縣 </option>
+                                                        <option value="新竹市"> 新竹市 </option>
+                                                        <option value="新竹縣"> 新竹縣 </option>
+                                                        <option value="桃園縣"> 桃園縣 </option>
+                                                        <option value="苗栗縣"> 苗栗縣 </option>
+                                                        <option value="台中市"> 台中市 </option>
+                                                        <option value="彰化縣"> 彰化縣 </option>
+                                                        <option value="南投縣"> 南投縣 </option>
+                                                        <option value="嘉義市"> 嘉義市 </option>
+                                                        <option value="嘉義縣"> 嘉義縣 </option>
+                                                        <option value="雲林縣"> 雲林縣 </option>
+                                                        <option value="台南市"> 台南市 </option>
+                                                        <option value="高雄市"> 高雄市 </option>
+                                                        <option value="澎湖縣"> 澎湖縣 </option>
+                                                        <option value="屏東縣"> 屏東縣 </option>
+                                                        <option value="台東縣"> 台東縣 </option>
+                                                        <option value="花蓮縣"> 花蓮縣 </option>
+                                                        <option value="金門縣"> 金門縣 </option>
+                                                        <option value="連江縣"> 連江縣 </option>
+                                                    </select>
+
+                                                    <div class="field__caret">
+                                                        <svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down"></use> </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="field field--half-city">
+                                                <div class="field__input-wrapper">
+                                                    <label class="field__label">城市</label>
+                                                    <input type="text" class="field__input" id="checkout_shipping_address_city" placeholder="城市" size="30" name="checkout[shipping_address][city]">
+                                                </div>
+                                            </div> -->
+                                            <div class="field field--half-zip">
+                                                <div class="field__input-wrapper">
+                                                    <!-- <label class="field__label">郵遞區號</label> -->
+                                                    @*<input type="text" class="field__input" id="checkout_shipping_address_zip" placeholder="郵遞區號" size="30" name="ZipCOde" value="@ViewData["ZipCode"]">*@
+                                                    @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @id = "checkout_shipping_address_zip", @class = "field__input", @size = "30", @Value = @ViewData["ZipCode"], @placeholder = "郵遞區號" } })
+                                                    @Html.ValidationMessageFor(model => model.ZipCode, "", new { @style = "color:#FF3333" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="field__input-wrapper">
+                                                <!-- <label class="field__label">地址</label> -->
+                                                @*<input type="text" class="field__input" id="checkout_shipping_address_address" placeholder="地址" size="30" name="Address" value="@ViewData["Address"]">*@
+                                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @id = "checkout_shipping_address_address", @class = "field__input", @size = "30", @Value = @ViewData["Address"], @placeholder = "地址" } })
+                                                @Html.ValidationMessageFor(model => model.Address, "", new { @style = "color:#FF3333" })
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="field__input-wrapper">
+                                                <!-- <label class="field__label">電話</label> -->
+                                                @*<input type="text" class="field__input" id="checkout_shipping_address_phone" placeholder="電話" size="30" name="Phone" value="@ViewData["Phone"]">*@
+                                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @id = "checkout_shipping_address_phone", @class = "field__input", @size = "30", @Value = @ViewData["Phone"], @placeholder = "電話" } })
+                                                @Html.ValidationMessageFor(model => model.Phone, "", new { @style = "color:#FF3333" })
+                                                <div id="phone_tooltip" class="field__icon">
+                                                    <!-- <span id="tooltip-for-phone" class="tooltip">
+                                                        In case we need to contact you about your order.
+                                                    </span>
+                                                    <i class="fas fa-question-circle"></i> -->
+
+                                                    <div class="field__icon-svg" data-toggle="tooltip" data-placement="top" title=' In case we need to contact you about your order.'>
+
+                                                        <i class="fas fa-question-circle"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="section">
+                                <div class="section__content">
+                                    <div class="checkbox-wrapper">
+                                        <div class="checkbox__input">
+                                            <input type="checkbox" value="1" name="checkout[remember_me]" id="checkout_remember_me" class="input-checkbox">
+
+
+
+                                        </div>
+                                        <label class="checkbox__label" for="checkout_remember_me">儲存資訊</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="step__footer">
+                            <button id="continue_button" class="step__footer__continue-btn btn" type="submit" name="button">
+                                <!-- loading ICON -->
+                                <span class="btn__content">前往運送資訊</span>
+                            </button>
+                            @if ((bool)Session["CartToHere"])
+                            {
+                                <a href="/Cart/ShoppingCart" class="step__footer__previous-link">
+                                    <i class="fas fa-chevron-left"></i><span class="step__footer__previous-link__content">回到購物車</span>
+                                </a>
+                            }
+                            else
+                            {
+                                var BuyOne = (BuyOneViewModel)Session["BuyItNow"];
+                                <a href="/Home/ProductDetailPage/@BuyOne.CartItem.ProductID" class="step__footer__previous-link">
+                                    <i class="fas fa-chevron-left"></i><span class="step__footer__previous-link__content">回到商品頁</span>
+                                </a>
+                            }
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 一堆SPAN -->
+                <div class="main__footer">
+                    <div>
+                        <ul class="policy-list">
+                            <!-- 做跳出頁面 -->
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Refundpolicy.cshtml">Refund policy</a>
+                            </li>
+
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Privacypolicy.html">Privacy policy</a>
+                            </li>
+
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Termsofservice.html">Terms of service</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="color-right">
+            <div class="rightview">
+                <div class="sidebar" role="complementary">
+                    <div class="sidebar__header">
+                        <a href="" class="logo">
+                            <h1></h1>
+                        </a>
+                    </div>
+                    <div class="sidebar__content">
+                        @Html.Action("getOrderPartial", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

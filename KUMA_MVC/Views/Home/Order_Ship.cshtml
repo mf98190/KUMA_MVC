@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Order_Pay";
+    Layout = "~/Views/Shared/_Layout_ANVI.cshtml";
+    var CartToHere = (bool) ViewBag.CartToHere;
+}
+@section topCSS
+{
+    <link href="~/Assets/css/Order_Customer.css" rel="stylesheet" />
+    <link href="~/Assets/css/Order_Pay.css" rel="stylesheet" />
+}
+
+@section endJS
+{
+    <script src="~/Assets/js/Order_Pay.js"></script>
+}
+<div class="content">
+    <div class="wrap">
+        <div class="leftview">
+            <div class="main">
+                <div class="main__header">
+                    <a href="#" class="logo">
+                        <img src="~/Assets/images/otherphoto/ANVI_LOGO120.png" alt="ANVI" class="logo_image">
+                    </a>
+                    <!-- <h1 class="">客戶資訊</h1> -->
+                    <ul class="bread-crumb">
+                        @if (CartToHere)
+                        {
+                            <li class="breadcrumb__item">
+                                <a href="/cart" class="breadcrumb__link">購物車</a><i class="fas fa-chevron-right"></i>
+                            </li>
+                        }
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">客戶資訊</span><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">運送方式</span><i class="fas fa-chevron-right"></i></li>
+                        <li class="breadcrumb__item"><span class="breadcrumb__text">付款方式</span></li>
+                    </ul>
+                </div>
+                <div class="main__content">
+                    <div class="step">
+                        <form action="/Home/Order_ship" class="edit_checkout" method="post">
+                            <!-- 有用input hidden去記表單 -->
+                            <div class="step__sections">
+                                <div class="section">
+                                    <div class="content-box">
+                                        <div class="content-box__row content-box__row--tight-spacing-vertical">
+                                            <div class="review-block">
+                                                <div class="review-block__inner">
+                                                    <div class="review-block__label">Contact</div>
+                                                    <div class="review-block__content">
+                                                        <bdo dir="ltr">@ViewData["Email"]</bdo>
+                                                    </div>
+                                                </div>
+
+                                                <div class="review-block__link">
+                                                    @*<a href="~/Views/Home/Order_Customer.cshtml" class="link--small">
+                                                        <span aria-hidden="true">Cange</span>
+                                                        <span class="visually-hidden">Change contact information</span>
+                                                    </a>*@
+                                                </div>
+                                            </div>
+
+                                            <div class="review-block">
+                                                <div class="review-block__inner">
+                                                    <div class="review-block__label">Ship&nbspto</div>
+                                                    <div class="review-block__content">
+                                                        <address class="address address--tight">
+                                                            @ViewData["Address"]
+                                                        </address>
+                                                        <!-- 不知道原本這邊為啥會有一個地址元素?不懂 -->
+                                                    </div>
+                                                </div>
+                                                <div class="review-block__link">
+                                                    @*<a href="~/Views/Home/Order_Customer.cshtml" class="link--small">
+                                                        <span aria-hidden="true">Cange</span>
+                                                        <span class="visually-hidden">Change contact information</span>
+                                                    </a>*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section section--shipping-method">
+                                    <div class="section__header">
+                                        <h2 class="section__title">運送方式</h2>
+                                    </div>
+                                    <div class="section__content">
+                                        <div class="content-box">
+                                            <div class="content-box__row">
+                                                <div class="radio-wrapper">
+                                                    <label for="checkout_shipping_rate_id_shopify-free20shipping-0_00" class="radio__label">
+
+                                                        <div class="radio__input">
+                                                            <input type="radio" id="checkout_shipping_rate_id_shopify-free20shipping-0_00" class="input-radio" aria-label="FREE SHIPPING" name="checkout[shipping_rate][id]" checked="checked">
+                                                        </div>
+
+                                                        <span class="radio__label__primary">FREE SHIPPING</span>
+                                                        <span class="radio__label__accessory">
+                                                            <span class="content-box_emphasis">免費</span>
+                                                        </span>
+                                                    </label>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                    </div>
+                    <div class="step__footer">
+                        <button id="continue_button" class="step__footer__continue-btn btn" type="submit" name="button">
+                            <!-- loading ICON -->
+                            <span class="btn__content">前往付款方式</span>
+                        </button>
+                        <a href="/Home/Order_Customer" class="step__footer__previous-link">
+                            <i class="fas fa-chevron-left"></i><span class="step__footer__previous-link__content">返回客戶資訊</span>
+                        </a>
+                    </div>
+                    </form>
+                </div>
+                <!-- 一堆SPAN -->
+                <div class="main__footer">
+                    <div>
+                        <ul class="policy-list">
+                            <!-- 做跳出頁面找時間用BOOTSTRAP MODAL套一套 -->
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Refundpolicy.cshtml">Refund policy</a>
+                            </li>
+
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Privacypolicy.html">Privacy policy</a>
+                            </li>
+
+                            <li class="policy-list__item">
+                                <a aria-haspopup="dialog" target="_blank" href="~/Views/Other/Termsofservice.html">Terms of service</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="color-right">
+            <div class="rightview">
+                <div class="sidebar" role="complementary">
+                    <!-- <div class="sidebar__header">
+                     <a href="" class="logo">
+                          <h1></h1>
+                     </a>
+                    </div> -->
+                    <div class="sidebar__content">
+                        @Html.Action("getOrderPartial", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
