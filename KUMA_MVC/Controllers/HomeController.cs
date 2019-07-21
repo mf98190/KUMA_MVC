@@ -30,13 +30,15 @@ namespace KUMA_MVC.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(CacheProfile = "HomeIndex")]
         public ActionResult Index()   //主頁面
         {
             return View();
         }
 
         [AllowAnonymous]
-        public ActionResult ProductsPage(string Category ,int page,string sortOrder) //商品頁面
+        [OutputCache(CacheProfile = "ProductsPage")]
+        public ActionResult ProductsPage(string Category, int page, string sortOrder) //商品頁面
         {
             var products = from p in db.Products select p;
             //分類
@@ -71,7 +73,7 @@ namespace KUMA_MVC.Controllers
             switch (sortOrder)
             {
                 case "PriceHighToLow":
-                    products = products.OrderByDescending(x=>x.UnitPrice);
+                    products = products.OrderByDescending(x => x.UnitPrice);
                     ViewBag.SortOrder = "PriceHighToLow";
                     break;
                 case "PriceLowToHigh":
@@ -104,7 +106,7 @@ namespace KUMA_MVC.Controllers
             //每八個一頁
             var ProductNumber = 8;
             //取得目前頁所需要顯示的物品
-            var pList = AllProducts.Skip((page - 1) * ProductNumber).Take(page * ProductNumber).ToList();
+            var pList = AllProducts.Skip((page - 1) * ProductNumber).Take(ProductNumber).ToList();
 
             //建立全部商品
             ProductsService service = new ProductsService(db);
@@ -160,7 +162,7 @@ namespace KUMA_MVC.Controllers
         [AllowAnonymous]
         public ActionResult BuyItNow(string pdid)       //立即購買按鈕
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["AnviConnection"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["KumaConnection"].ConnectionString;
             string queryString = @"select 
                                  cat.CategoryName, 
                                  p.ProductID, 
@@ -364,7 +366,7 @@ namespace KUMA_MVC.Controllers
                     var pd = PDs.FirstOrDefault(x => x.PDID == OD.PDID);
                     pd.Stock -= OD.Quantity;
                     REPO_PD.Update(pd);
-                    
+
                 }
             }
             else // BuyItNow
@@ -446,7 +448,7 @@ namespace KUMA_MVC.Controllers
             AccountPageViewModel model = new AccountPageViewModel();
             var userID = User.Identity.GetUserId();
             model.User = db.AspNetUsers.FirstOrDefault(x => x.Id == userID);
-            if(db.Orders.Any(x => x.UserID == userID))
+            if (db.Orders.Any(x => x.UserID == userID))
             {
                 List<Order> orders = db.Orders.Where(x => x.UserID == userID).OrderByDescending(x => x.OrderID).ToList();
                 model.Orders = orders;
@@ -462,7 +464,7 @@ namespace KUMA_MVC.Controllers
                         orderDetails.Add(sonitem);
                         endIndext = sonitem.PDID.IndexOf("-");
                         PDIDtoFindImg = sonitem.PDID.Substring(0, endIndext) + "-1";
-                        if(!images.Any(x => x.PDID == PDIDtoFindImg))
+                        if (!images.Any(x => x.PDID == PDIDtoFindImg))
                         {
                             images.Add(db.Images.First(x => x.PDID == PDIDtoFindImg));
                         }
@@ -485,7 +487,7 @@ namespace KUMA_MVC.Controllers
             {
                 var Userid = User.Identity.GetUserId();
                 var user = db.AspNetUsers.FirstOrDefault(x => x.Id == Userid);
-                
+
                 user.Name = model.Name;
                 user.Email = model.Email;
                 user.PhoneNumber = model.PhoneNumber;
@@ -495,7 +497,7 @@ namespace KUMA_MVC.Controllers
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
             }
-            return RedirectToAction("AccountPage","Home");
+            return RedirectToAction("AccountPage", "Home");
 
         }
     }

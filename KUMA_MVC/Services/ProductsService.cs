@@ -13,7 +13,7 @@ namespace KUMA_MVC.Services
     public class ProductsService
     {
         private KumaModel db;
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["AnviConnection"].ConnectionString;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["KumaConnection"].ConnectionString;
         public ProductsService(KumaModel db)
         {
             this.db = db;
