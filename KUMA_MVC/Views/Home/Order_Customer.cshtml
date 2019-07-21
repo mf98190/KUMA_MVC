@@ -1,9 +1,9 @@
-﻿@using ANVI_Mvc.Services
+﻿@using KUMA_MVC.Services
 @model OrderCustomerViewModel
 
 @{
     ViewBag.Title = "Order_Customer";
-    Layout = "~/Views/Shared/_Layout_ANVI.cshtml";
+    Layout = "~/Views/Shared/_Layout_KUMA.cshtml";
 
     var currentCart = new CartModel(); //取得目前購物車資料
     if (CartService.GetCurrentCart() != null) //判斷是否有東西

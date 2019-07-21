@@ -248,7 +248,7 @@
 
                     @{
                         var colorList1 = new List<Color>();
-                        var colorimgList = new List<ANVI_Mvc.Models.Image>();
+                        var colorimgList = new List<KUMA_MVC.Models.Image>();
 
 
                         foreach (var item in Model.ProductDetailViewModels)
@@ -262,7 +262,7 @@
 
                                 if (((item.PDID == itemimg.PDID) == true) && (colorimgList.Exists(x => x.PDID == item.PDID) == false))
                                 {
-                                    colorimgList.Add(new ANVI_Mvc.Models.Image() { PDID = item.PDID, ImgName = itemimg.ImgName });
+                                    colorimgList.Add(new KUMA_MVC.Models.Image() { PDID = item.PDID, ImgName = itemimg.ImgName });
                                 }
                             }
                         }

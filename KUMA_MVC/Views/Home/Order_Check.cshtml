@@ -1,7 +1,7 @@
 ﻿@model CartModel
 @{
     ViewBag.Title = "Order_End";
-    Layout = "~/Views/Shared/_Layout_ANVI.cshtml";
+    Layout = "~/Views/Shared/_Layout_KUMA.cshtml";
 
 }
 
@@ -9,7 +9,7 @@
 @section topCSS
 {
     <link href="~/Assets/css/Order_Customer.css" rel="stylesheet" />
- 
+
 }
 
 @section endJS
@@ -34,17 +34,17 @@
 
                         <div class="section__header os-header">
                             <!-- <svg class="icon-svg icon-svg--color-accent icon-svg--size-48 os-header__hanging-icon os-header__hanging-icon--animate" aria-hidden="true" focusable="false">
-                <use xlink:href="#checkmark">
-                    <symbol id="checkmark">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none" stroke-width="2" class="checkmark">
-                            <path class="checkmark__circle" d="M25 49c13.255 0 24-10.745 24-24S38.255 1 25 1 1 11.745 1 25s10.745 24 24 24z">
+                                <use xlink:href="#checkmark">
+                                    <symbol id="checkmark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none" stroke-width="2" class="checkmark">
+                                            <path class="checkmark__circle" d="M25 49c13.255 0 24-10.745 24-24S38.255 1 25 1 1 11.745 1 25s10.745 24 24 24z">
 
-                            </path>
-                            <path class="checkmark__check" d="M15 24.51l7.307 7.308L35.125 19"></path>
-                        </svg>
-            </symbol>
-            </use>
-            </svg> -->
+                                            </path>
+                                            <path class="checkmark__check" d="M15 24.51l7.307 7.308L35.125 19"></path>
+                                        </svg>
+                            </symbol>
+                            </use>
+                            </svg> -->
                             <div class="svggo">
 
                             </div>
@@ -201,7 +201,7 @@
                      </a>
                     </div> -->
                     <div class="sidebar__content ">
-                         @Html.Action("getOrderPartial", "Home", new { currentCart = ViewData.Model, images = (string[])ViewBag.Img });
+                        @Html.Action("getOrderPartial", "Home", new { currentCart = ViewData.Model, images = (string[])ViewBag.Img });
                     </div>
                 </div>
             </div>
