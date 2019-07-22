@@ -7,13 +7,13 @@ namespace KUMA_MVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialSeedData : IMigrationMetadata
+    public sealed partial class AddLineUserID : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSeedData));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddLineUserID));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907120321071_InitialSeedData"; }
+            get { return "201907220753540_AddLineUserID"; }
         }
         
         string IMigrationMetadata.Source

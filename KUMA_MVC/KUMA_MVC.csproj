@@ -199,16 +199,15 @@
     <Compile Include="Helpers\ConstantData.cs" />
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\Site.cs" />
-    <Compile Include="Migrations\201907120321071_InitialSeedData.cs" />
-    <Compile Include="Migrations\201907120321071_InitialSeedData.Designer.cs">
-      <DependentUpon>201907120321071_InitialSeedData.cs</DependentUpon>
+    <Compile Include="Migrations\201907220753540_AddLineUserID.cs" />
+    <Compile Include="Migrations\201907220753540_AddLineUserID.Designer.cs">
+      <DependentUpon>201907220753540_AddLineUserID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
-    <Compile Include="Models\CartItemModel.cs" />
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Color.cs" />
@@ -3288,8 +3287,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907120321071_InitialSeedData.resx">
-      <DependentUpon>201907120321071_InitialSeedData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907220753540_AddLineUserID.resx">
+      <DependentUpon>201907220753540_AddLineUserID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

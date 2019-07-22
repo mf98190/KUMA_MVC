@@ -168,7 +168,7 @@ namespace KUMA_MVC.Controllers
                 {
                     ++userCount;
                     var nextUserID = "IDU" + userCount.ToString("0000");
-                    var user = new ApplicationUser { Id = nextUserID, UserName = model.Email, Email = model.Email, Name = model.Name, PhoneNumber = model.PhoneNumber };
+                    var user = new ApplicationUser { Id = nextUserID, UserName = model.Email, Email = model.Email, Name = model.Name, PhoneNumber = model.PhoneNumber, LineUserID = string.Empty };
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {

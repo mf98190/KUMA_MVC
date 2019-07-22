@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -10,7 +11,7 @@ namespace KUMA_MVC.Models
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
-        public string LineUserI { get; set; }
+        public string LineUserID { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // 注意 authenticationType 必須符合 CookieAuthenticationOptions.AuthenticationType 中定義的項目
