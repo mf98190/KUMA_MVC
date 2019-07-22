@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace KUMA_MVC.Models
 {
     using System;

@@ -83,44 +83,42 @@ namespace KUMA_MVC.Migrations
             context.ProductDetails.AddOrUpdate(
             x => x.PDID,
             new ProductDetail() { PDID = "1-1", ProductID = 1, Stock = 10, SizeID = 14, ColorID = 1 },
-            new ProductDetail() { PDID = "2-1", ProductID = 2, Stock = 10, SizeID = 4, ColorID = 1 },
-            new ProductDetail() { PDID = "3-1", ProductID = 3, Stock = 5, SizeID = 13, ColorID = 1 },
-            new ProductDetail() { PDID = "4-1", ProductID = 4, Stock = 3, SizeID = 7, ColorID = 1 },
-            new ProductDetail() { PDID = "4-2", ProductID = 4, Stock = 3, SizeID = 8, ColorID = 1 },
-            new ProductDetail() { PDID = "5-1", ProductID = 5, Stock = 4, SizeID = 9, ColorID = 1 },
-            new ProductDetail() { PDID = "5-2", ProductID = 5, Stock = 10, SizeID = 10, ColorID = 1 },
-            new ProductDetail() { PDID = "5-3", ProductID = 5, Stock = 3, SizeID = 11, ColorID = 1 },
-            new ProductDetail() { PDID = "6-1", ProductID = 6, Stock = 6, SizeID = 9, ColorID = 1, },
-            new ProductDetail() { PDID = "6-2", ProductID = 6, Stock = 3, SizeID = 10, ColorID = 1, },
-            new ProductDetail() { PDID = "6-3", ProductID = 6, Stock = 1, SizeID = 11, ColorID = 1, },
-            new ProductDetail() { PDID = "7-1", ProductID = 7, Stock = 7, SizeID = 9, ColorID = 1, },
-            new ProductDetail() { PDID = "7-2", ProductID = 7, Stock = 3, SizeID = 10, ColorID = 1, },
-            new ProductDetail() { PDID = "7-3", ProductID = 7, Stock = 1, SizeID = 11, ColorID = 1, },
-            new ProductDetail() { PDID = "7-4", ProductID = 7, Stock = 7, SizeID = 9, ColorID = 2, },
-            new ProductDetail() { PDID = "7-5", ProductID = 7, Stock = 2, SizeID = 10, ColorID = 2, },
-            new ProductDetail() { PDID = "7-6", ProductID = 7, Stock = 3, SizeID = 11, ColorID = 2, },
-            new ProductDetail() { PDID = "8-1", ProductID = 8, Stock = 6, SizeID = 10, ColorID = 1, },
-            new ProductDetail() { PDID = "8-2", ProductID = 8, Stock = 3, SizeID = 11, ColorID = 1, },
-            new ProductDetail() { PDID = "9-1", ProductID = 9, Stock = 1, SizeID = 10, ColorID = 1, },
-            new ProductDetail() { PDID = "9-2", ProductID = 9, Stock = 7, SizeID = 11, ColorID = 1, },
-            new ProductDetail() { PDID = "10-1", ProductID = 10, Stock = 3, SizeID = 10, ColorID = 3, },
-            new ProductDetail() { PDID = "10-2", ProductID = 10, Stock = 1, SizeID = 11, ColorID = 3, },
-            new ProductDetail() { PDID = "11-1", ProductID = 11, Stock = 7, SizeID = 10, ColorID = 3, },
-            new ProductDetail() { PDID = "11-2", ProductID = 11, Stock = 2, SizeID = 11, ColorID = 3, },
-            new ProductDetail() { PDID = "12-1", ProductID = 12, Stock = 2, SizeID = 12, ColorID = 1 },
-            new ProductDetail() { PDID = "13-1", ProductID = 13, Stock = 0, SizeID = 12, ColorID = 1 },
-            new ProductDetail() { PDID = "14-1", ProductID = 14, Stock = 4, SizeID = 12, ColorID = 1 },
-            new ProductDetail() { PDID = "15-1", ProductID = 15, Stock = 12, SizeID = 14, ColorID = 1, },
-            new ProductDetail() { PDID = "16-1", ProductID = 16, Stock = 20, SizeID = 4, ColorID = 3, },
-            new ProductDetail() { PDID = "17-1", ProductID = 17, Stock = 5, SizeID = 13, ColorID = 1 },
-            new ProductDetail() { PDID = "18-1", ProductID = 18, Stock = 8, SizeID = 13, ColorID = 3 },
-            new ProductDetail() { PDID = "19-1", ProductID = 19, Stock = 3, SizeID = 13, ColorID = 1 },
-            new ProductDetail() { PDID = "20-1", ProductID = 20, Stock = 0, SizeID = 9, ColorID = 1 },
-            new ProductDetail() { PDID = "20-2", ProductID = 20, Stock = 7, SizeID = 10, ColorID = 1 },
-            new ProductDetail() { PDID = "20-3", ProductID = 20, Stock = 12, SizeID = 11, ColorID = 1 },
-            new ProductDetail() { PDID = "21-1", ProductID = 21, Stock = 1, SizeID = 13, ColorID = 1 }
-
-
+                new ProductDetail() { PDID = "2-1", ProductID = 2, Stock = 10, SizeID = 4, ColorID = 1 },
+                new ProductDetail() { PDID = "3-1", ProductID = 3, Stock = 5, SizeID = 13, ColorID = 1 },
+                new ProductDetail() { PDID = "4-1", ProductID = 4, Stock = 3, SizeID = 7, ColorID = 1 },
+                new ProductDetail() { PDID = "4-2", ProductID = 4, Stock = 3, SizeID = 8, ColorID = 1 },
+                new ProductDetail() { PDID = "5-1", ProductID = 5, Stock = 4, SizeID = 9, ColorID = 1 },
+                new ProductDetail() { PDID = "5-2", ProductID = 5, Stock = 10, SizeID = 10, ColorID = 1 },
+                new ProductDetail() { PDID = "5-3", ProductID = 5, Stock = 3, SizeID = 11, ColorID = 1 },
+                new ProductDetail() { PDID = "6-1", ProductID = 6, Stock = 6, SizeID = 9, ColorID = 1, },
+                new ProductDetail() { PDID = "6-2", ProductID = 6, Stock = 3, SizeID = 10, ColorID = 1, },
+                new ProductDetail() { PDID = "6-3", ProductID = 6, Stock = 1, SizeID = 11, ColorID = 1, },
+                new ProductDetail() { PDID = "7-1", ProductID = 7, Stock = 7, SizeID = 9, ColorID = 1, },
+                new ProductDetail() { PDID = "7-2", ProductID = 7, Stock = 3, SizeID = 10, ColorID = 1, },
+                new ProductDetail() { PDID = "7-3", ProductID = 7, Stock = 1, SizeID = 11, ColorID = 1, },
+                new ProductDetail() { PDID = "7-4", ProductID = 7, Stock = 7, SizeID = 9, ColorID = 2, },
+                new ProductDetail() { PDID = "7-5", ProductID = 7, Stock = 2, SizeID = 10, ColorID = 2, },
+                new ProductDetail() { PDID = "7-6", ProductID = 7, Stock = 3, SizeID = 11, ColorID = 2, },
+                new ProductDetail() { PDID = "8-1", ProductID = 8, Stock = 6, SizeID = 10, ColorID = 1, },
+                new ProductDetail() { PDID = "8-2", ProductID = 8, Stock = 3, SizeID = 11, ColorID = 1, },
+                new ProductDetail() { PDID = "9-1", ProductID = 9, Stock = 1, SizeID = 10, ColorID = 1, },
+                new ProductDetail() { PDID = "9-2", ProductID = 9, Stock = 7, SizeID = 11, ColorID = 1, },
+                new ProductDetail() { PDID = "10-1", ProductID = 10, Stock = 3, SizeID = 10, ColorID = 3, },
+                new ProductDetail() { PDID = "10-2", ProductID = 10, Stock = 1, SizeID = 11, ColorID = 3, },
+                new ProductDetail() { PDID = "11-1", ProductID = 11, Stock = 7, SizeID = 10, ColorID = 3, },
+                new ProductDetail() { PDID = "11-2", ProductID = 11, Stock = 2, SizeID = 11, ColorID = 3, },
+                new ProductDetail() { PDID = "12-1", ProductID = 12, Stock = 2, SizeID = 12, ColorID = 1 },
+                new ProductDetail() { PDID = "13-1", ProductID = 13, Stock = 0, SizeID = 12, ColorID = 1 },
+                new ProductDetail() { PDID = "14-1", ProductID = 14, Stock = 4, SizeID = 12, ColorID = 1 },
+                new ProductDetail() { PDID = "15-1", ProductID = 15, Stock = 12, SizeID = 14, ColorID = 1, },
+                new ProductDetail() { PDID = "16-1", ProductID = 16, Stock = 20, SizeID = 4, ColorID = 3, },
+                new ProductDetail() { PDID = "17-1", ProductID = 17, Stock = 5, SizeID = 13, ColorID = 1 },
+                new ProductDetail() { PDID = "18-1", ProductID = 18, Stock = 8, SizeID = 13, ColorID = 3 },
+                new ProductDetail() { PDID = "19-1", ProductID = 19, Stock = 3, SizeID = 13, ColorID = 1 },
+                new ProductDetail() { PDID = "20-1", ProductID = 20, Stock = 0, SizeID = 9, ColorID = 1 },
+                new ProductDetail() { PDID = "20-2", ProductID = 20, Stock = 7, SizeID = 10, ColorID = 1 },
+                new ProductDetail() { PDID = "20-3", ProductID = 20, Stock = 12, SizeID = 11, ColorID = 1 },
+                new ProductDetail() { PDID = "21-1", ProductID = 21, Stock = 1, SizeID = 13, ColorID = 1 }
             );
             context.DesSubTitles.AddOrUpdate(
                 x => x.DSTID,
@@ -319,7 +317,8 @@ namespace KUMA_MVC.Migrations
                 new Status() { StasusID = 3, StatusName = "已送達" },
                 new Status() { StasusID = 4, StatusName = "未取件" },
                 new Status() { StasusID = 5, StatusName = "已處理" },
-                new Status() { StasusID = 6, StatusName = "待處理" }
+                new Status() { StasusID = 6, StatusName = "待處理" },
+                new Status() { StasusID = 7, StatusName = "訂單成立" }
             );
             context.SupportCategories.AddOrUpdate(
                 x => x.SupportCategoryID,
@@ -327,7 +326,14 @@ namespace KUMA_MVC.Migrations
                 new SupportCategory() { SupportCategoryID = 2, SupportCategoryName = "客訴" },
                 new SupportCategory() { SupportCategoryID = 3, SupportCategoryName = "商品退換貨" }
             );
-
+            context.Shippers.AddOrUpdate(
+                x => x.ShipperID,
+                new Shipper() {ShipperID = 1, ShippName = "7-11", Phone = "03-5846599", Fare = 60},
+                new Shipper() {ShipperID = 2, ShippName = "全家", Phone = "03-58746599", Fare = 60},
+                new Shipper() {ShipperID = 3, ShippName = "萊爾富", Phone = "03-5698722", Fare = 60},
+                new Shipper() {ShipperID = 4, ShippName = "中華郵政", Phone = "03-5698233", Fare = 80},
+                new Shipper() {ShipperID = 5, ShippName = "宅急便", Phone = "03-5693123", Fare = 90}
+            );
         }
     }
 }

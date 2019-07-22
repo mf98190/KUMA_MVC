@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace KUMA_MVC.Models
 {
     using System;
@@ -23,6 +25,11 @@ namespace KUMA_MVC.Models
         [Required]
         [StringLength(15)]
         public string Phone { get; set; }
+
+        [Required]
+        [Column(TypeName = "Money")]
+        [DisplayName("¹B¶O")]
+        public decimal Fare { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

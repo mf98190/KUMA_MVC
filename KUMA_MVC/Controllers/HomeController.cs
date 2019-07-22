@@ -340,6 +340,8 @@ namespace KUMA_MVC.Controllers
                 O.Remaeks = Session["Remark"].ToString();
             }
             O.OrderDate = DateTime.Now;
+            O.StatusID = 7;
+            O.TotalPrice = 0;
             //O.ShipDate = DateTime.Now.AddHours(1);
 
             REPO_O.Create(O);
@@ -368,7 +370,7 @@ namespace KUMA_MVC.Controllers
                     REPO_PD.Update(pd);
                 }
                 //加入Order總金額
-                O = db.Orders.LastOrDefault(x => x.OrderID == OrderID);
+                O = OrderList.LastOrDefault(x => x.OrderID == OrderID);
                 O.TotalPrice = currentCart.TotalAmount;
                 REPO_O.Update(O);
             }
