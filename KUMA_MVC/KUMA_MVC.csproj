@@ -3281,16 +3281,16 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907120321071_InitialSeedData.resx">
-      <DependentUpon>201907120321071_InitialSeedData.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Assets\BackSystem\vendors\popper.js\packages\popper\index.d.ts" />
     <TypeScriptCompile Include="Assets\BackSystem\vendors\popper.js\packages\tooltip\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907120321071_InitialSeedData.resx">
+      <DependentUpon>201907120321071_InitialSeedData.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

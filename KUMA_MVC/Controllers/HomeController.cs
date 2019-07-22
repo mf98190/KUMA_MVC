@@ -358,7 +358,7 @@ namespace KUMA_MVC.Controllers
                     var OD = new OrderDetail();
                     OD.PDID = item.PDID;
                     OD.OrderID = OrderID;
-                    OD.Price = item.UnitPrice;
+                    OD.Price = item.Amount;
                     OD.Quantity = item.Quantity;
                     REPO_OD.Create(OD);
 
@@ -366,8 +366,11 @@ namespace KUMA_MVC.Controllers
                     var pd = PDs.FirstOrDefault(x => x.PDID == OD.PDID);
                     pd.Stock -= OD.Quantity;
                     REPO_PD.Update(pd);
-
                 }
+                //加入Order總金額
+                O = db.Orders.LastOrDefault(x => x.OrderID == OrderID);
+                O.TotalPrice = currentCart.TotalAmount;
+                REPO_O.Update(O);
             }
             else // BuyItNow
             {
@@ -379,6 +382,10 @@ namespace KUMA_MVC.Controllers
                 OD.Price = BuyItNow.CartItem.UnitPrice;
                 OD.Quantity = BuyItNow.CartItem.Quantity;
                 REPO_OD.Create(OD);
+                //加入Order總金額
+                O = db.Orders.LastOrDefault(x => x.OrderID == OrderID);
+                O.TotalPrice = BuyItNow.CartItem.Amount;
+                REPO_O.Update(O);
 
                 //修正物品庫存量
                 var pd = PDs.FirstOrDefault(x => x.PDID == OD.PDID);

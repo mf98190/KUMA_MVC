@@ -33,7 +33,6 @@ namespace KUMA_MVC.Models
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<SupportCategory> SupportCategories { get; set; }
         public virtual DbSet<Support> Supports { get; set; }
-        public virtual DbSet<ViewWord> ViewWords { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

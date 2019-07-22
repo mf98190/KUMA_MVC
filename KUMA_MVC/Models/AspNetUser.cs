@@ -66,6 +66,8 @@ namespace KUMA_MVC.Models
         [StringLength(10)]
         public string CreditCard { get; set; }
 
+        public string LineUserID { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
 
