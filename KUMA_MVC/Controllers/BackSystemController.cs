@@ -10,8 +10,8 @@ using static KUMA_MVC.Helpers.ConstantData;
 
 namespace KUMA_MVC.Controllers
 {
-    //[Authorize]
-    //[Backend]
+    [Authorize]
+    [Backend]
     public class BackSystemController : Controller
     {
         private KumaModel db = new KumaModel(); 
