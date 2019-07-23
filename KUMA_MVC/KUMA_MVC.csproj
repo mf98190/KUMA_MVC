@@ -3154,6 +3154,8 @@
     <Content Include="Assets\BackSystem\vendors\themify-icons\fonts\themify.woff" />
     <Content Include="Assets\BackSystem\vendors\themify-icons\README.md" />
     <Content Include="Assets\json\hot.json" />
+    <None Include="Properties\PublishProfiles\KUMAMVC - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\KUMAMVC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
