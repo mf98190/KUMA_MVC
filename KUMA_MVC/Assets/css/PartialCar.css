@@ -68,10 +68,10 @@ Car__.Container {
     }
 
     .PageContent .Cart_ItemList {
-        display: table;
-        table-layout: auto;
+        height: 200px;
+        max-height: 200px;
         width: 100%;
-        overflow: hidden;
+        overflow-y: auto;
     }
 
         .PageContent .Cart_ItemList .Cart_Head {

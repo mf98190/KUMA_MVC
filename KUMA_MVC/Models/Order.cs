@@ -1,3 +1,5 @@
+using System.Data.Entity.Core.Metadata.Edm;
+
 namespace KUMA_MVC.Models
 {
     using System;
@@ -22,12 +24,15 @@ namespace KUMA_MVC.Models
 
         public int? ShippingID { get; set; }
 
+        [Column(TypeName = "Money")]
+        public decimal Fare_now { get; set; }
+
         [Required]
         [StringLength(15)]
         public string RecipientName { get; set; }
 
         [Required]
-        [StringLength(30)]
+        [StringLength(500)]
         public string RecipientAddressee { get; set; }
 
         [StringLength(10)]
@@ -36,6 +41,10 @@ namespace KUMA_MVC.Models
         [Required]
         [StringLength(10)]
         public string RecipientCity { get; set; }
+
+        [Required]
+        [StringLength(15)]
+        public string RecipientCountry { get; set; }
 
         [Required]
         [StringLength(20)]

@@ -257,7 +257,7 @@ namespace KUMA_MVC.Controllers
         }
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Order_Ship(int ShipperID)  //下單-運送頁面!沒有HEADER跟FOOTER
+        public ActionResult Order_Ship()  //下單-運送頁面!沒有HEADER跟FOOTER
         {
             var OCVM = (OrderCustomerViewModel)Session["Order_Session"];
             ViewData["Email"] = OCVM.Email;
@@ -269,15 +269,21 @@ namespace KUMA_MVC.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Order_Ship(string Nothing)  //下單-運送頁面!沒有HEADER跟FOOTER
+        public ActionResult Order_Ship([Bind(Include = "ShipperID")]int ShipperID)  //下單-運送頁面!沒有HEADER跟FOOTER
         {
             var OCVM = (OrderCustomerViewModel)Session["Order_Session"];
+            Shipper shipper = db.Shippers.FirstOrDefault(x => x.ShipperID == ShipperID);
+            OCVM.ShipperID = ShipperID;
+            OCVM.ShippName = shipper.ShippName;
+            OCVM.Fare = shipper.Fare;
             ViewData["CustomerName"] = OCVM.CustomerName;
             ViewData["City"] = OCVM.City;
             ViewData["ZipCode"] = OCVM.ZipCode;
             ViewData["Address"] = OCVM.Address;
             ViewData["Phone"] = OCVM.Phone;
             ViewData["Email"] = OCVM.Email;
+            ViewData["ShippName"] = OCVM.ShippName;
+            ViewData["Fare"] = OCVM.Fare;
             ViewBag.CartToHere = Session["CartToHere"];
             ViewData.Model = OCVM;
 
@@ -321,19 +327,48 @@ namespace KUMA_MVC.Controllers
 
             var REPO_O = new Repositories.KumaRepository<Order>(db);
             var REPO_OD = new Repositories.KumaRepository<OrderDetail>(db);
+            Random rnd = new Random();
+            List<string> name = new List<string>()
+            {
+                "風志淇", "風志聞", "風志來", "風志可", "風志成", "風志偉"
+            };
+            List<string> country = new List<string>()
+            {
+                "Taiwan 台灣", "Thailand 泰國", "Sweden 瑞典", "Poland 波蘭", "Russia 俄羅斯", "Malaysia 馬來西亞", "Japan 日本", "India 印度", "United States 美國"
+            };
+            List<string> payment = new List<string>()
+            {
+                "銀行轉帳", "信用卡/VISA金融卡", "貨到付款"
+            };
+            List<string> city = new List<string>()
+            {
+                "Keelung", "Taipei", "Hsinchu", "Taichung", "Tainan", "Kaohsiung", "Yilan", "Taoyuan", "Miaoli", "Changhua", "Nantou"
+            };
+            List<string> address = new List<string>()
+            {
+                "No. 1, Sec. 4, Roosevelt Rd., Da’an Dist.", "No. 2, Ln. 456, Sec. 1, Xinsheng S. Rd., Da’an Dist.", "No. 456, Sec. 2, Heping E. Rd., Da’an Dist.", "No. 85, Sec. 1, Jianguo S. Rd., Da’an Dist.",
+                "No. 85, Sec. 1, Jianguo S. Rd., Da’an Dist.", "No. 67, Sec. 2, Yangde Blvd., Shilin Dist.", "No. 865, Yishou St., Wenshan Dist."
+            };
+            List<string> phone = new List<string>()
+            {
+                "+639051234567", "+817012345678", "+85261234567", "+12042345678", "+5491123456789", "+358412345678"
+            };
             var O = new Order();
 
             // 存到Order資料庫
-            O.RecipientName = OCVM.CustomerName;
-            O.RecipientCity = OCVM.City;
+            O.RecipientName = name[rnd.Next(name.Count)];
+            O.RecipientCity = city[rnd.Next(city.Count)];
             O.RecipientZipCod = OCVM.ZipCode;
-            O.RecipientAddressee = OCVM.Address;
-            O.RecipientPhone = OCVM.Phone;
+            O.RecipientAddressee = address[rnd.Next(address.Count)];
+            O.RecipientPhone = phone[rnd.Next(phone.Count)];
+            O.ShippingID = OCVM.ShipperID;
+            O.Fare_now = OCVM.Fare;
+            O.RecipientCountry = country[rnd.Next(country.Count)];
 
             var Userid = User.Identity.GetUserId();
             O.UserID = Userid;
             //因為目前只有轉帳功能
-            O.Payment = "銀行轉帳";
+            O.Payment = payment[rnd.Next(payment.Count)];
             if (Session["Remark"] == null)
             {
                 O.Remaeks = null;
@@ -373,8 +408,17 @@ namespace KUMA_MVC.Controllers
                     REPO_PD.Update(pd);
                 }
                 //加入Order總金額
-                O = OrderList.LastOrDefault(x => x.OrderID == OrderID);
-                O.TotalPrice = currentCart.TotalAmount;
+                try
+                {
+                    O = db.Orders.ToList().LastOrDefault(x => x.OrderID == OrderID);
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                O.TotalPrice = currentCart.TotalAmount + OCVM.Fare;
                 REPO_O.Update(O);
             }
             else // BuyItNow
@@ -388,8 +432,16 @@ namespace KUMA_MVC.Controllers
                 OD.Quantity = BuyItNow.CartItem.Quantity;
                 REPO_OD.Create(OD);
                 //加入Order總金額
-                O = db.Orders.LastOrDefault(x => x.OrderID == OrderID);
-                O.TotalPrice = BuyItNow.CartItem.Amount;
+                try
+                {
+                    O = db.Orders.ToList().LastOrDefault(x => x.OrderID == OrderID);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                O.TotalPrice = BuyItNow.CartItem.Amount + OCVM.Fare;
                 REPO_O.Update(O);
 
                 //修正物品庫存量

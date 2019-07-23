@@ -78,16 +78,12 @@
                                                     </a>*@
                                                 </div>
                                             </div>
-
                                             <div class="review-block">
                                                 <div class="review-block__inner">
                                                     <div class="review-block__label">Method</div>
                                                     <div class="review-block__content">
-                                                        <bdo dir="ltr">FREE SHIPPING．</bdo>
-
-
-
-                                                        <strong class="emphasis" aria-hidden="true">免費</strong>
+                                                        <bdo dir="ltr">@ViewData["ShippName"]．</bdo>
+                                                        <strong class="emphasis" aria-hidden="true">$@string.Format("{0:0,0}" ,ViewData["Fare"]) TWD</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,21 +100,12 @@
                                     <div class="section__content">
                                         <div class="content-box">
                                             <div class="radio-wrapper content-box__row">
-
-
-
                                                 <div class="radio__input">
                                                     <input type="radio" id="checkout_payment__gateway__6510346263" class="input-radio" name="checkout[payment__gateway]" checked="checked">
                                                 </div>
                                                 <div class="radio__label">
                                                     <label for="checkout_payment__gateway__6510346263" class="radio__label__primary content-box__emphasis">ATM&nbsp轉帳</label>
                                                 </div>
-
-
-
-
-
-
                                             </div>
                                             <div id="checkout_payment__gateway__6510346263" class="radio-wrapper content-box__row content-box__row--secondary">
                                                 <div class="blank-skate">

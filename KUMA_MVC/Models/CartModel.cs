@@ -11,10 +11,12 @@ namespace KUMA_MVC.Models
     {
         //建構值，初始化
         public List<CartItemViewModel> cartItems { get; set; }
+        public decimal Fare { get; set; }
 
         public CartModel()
         {
             this.cartItems = new List<CartItemViewModel>();
+            this.Fare = 0;
         }
 
         public int Count => this.cartItems.Count;

@@ -219,6 +219,22 @@
     <Compile Include="Migrations\201907222230020_新增Shipper種子資料.Designer.cs">
       <DependentUpon>201907222230020_新增Shipper種子資料.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907231300513_order增加運費欄位.cs" />
+    <Compile Include="Migrations\201907231300513_order增加運費欄位.Designer.cs">
+      <DependentUpon>201907231300513_order增加運費欄位.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907231305390_order增加運費欄位1.cs" />
+    <Compile Include="Migrations\201907231305390_order增加運費欄位1.Designer.cs">
+      <DependentUpon>201907231305390_order增加運費欄位1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907231417432_order增加國家欄位.cs" />
+    <Compile Include="Migrations\201907231417432_order增加國家欄位.Designer.cs">
+      <DependentUpon>201907231417432_order增加國家欄位.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907231531022_order地址長度增加.cs" />
+    <Compile Include="Migrations\201907231531022_order地址長度增加.Designer.cs">
+      <DependentUpon>201907231531022_order地址長度增加.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
@@ -3317,6 +3333,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907222230020_新增Shipper種子資料.resx">
       <DependentUpon>201907222230020_新增Shipper種子資料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907231300513_order增加運費欄位.resx">
+      <DependentUpon>201907231300513_order增加運費欄位.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907231305390_order增加運費欄位1.resx">
+      <DependentUpon>201907231305390_order增加運費欄位1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907231417432_order增加國家欄位.resx">
+      <DependentUpon>201907231417432_order增加國家欄位.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907231531022_order地址長度增加.resx">
+      <DependentUpon>201907231531022_order地址長度增加.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
