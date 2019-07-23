@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout_KUMA.cshtml";
     var CartToHere = (bool) ViewBag.CartToHere;
     List<Shipper> shippers = (List<Shipper>) ViewBag.Shippers;
+    Shipper s = shippers[0];
     int i = 1;
 }
 @section topCSS
@@ -101,6 +102,23 @@
                                                     </label>
                                                 </div>
                                             </div>*@
+                                            
+                                            <div class="content-box__row">
+                                                <div class="radio-wrapper">
+                                                    <label for="checkout_shipping_rate_id_shopify-free20shipping-0_00" class="radio__label">
+
+                                                        <div class="radio__input">
+                                                            <input type="radio" id="checkout_shipping_rate_id_shopify-free20shipping-0_00" class="input-radio" aria-label="FREE SHIPPING" name="checkout[shipping_rate][id]" checked="checked">
+                                                        </div>
+
+                                                        <span class="radio__label__primary">FREE SHIPPING</span>
+                                                        <span class="radio__label__accessory">
+                                                            <span class="content-box_emphasis">免費</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
                                             @foreach (var item in shippers)
                                             {
                                                 <div class="content-box__row">
@@ -109,14 +127,14 @@
                                                             @if (i == 1)
                                                             {
                                                                 <div class="radio__input">
-                                                                    <input type="radio" id="checkout_shipping_rate_id_shopify-@item.ShipperID" class="input-radio" aria-label="FREE SHIPPING" name="checkout[shipping_rate][id]" checked="checked">
+                                                                    <input type="radio" id="checkout_shipping_rate_id_shopify-@item.ShipperID" class="input-radio" aria-label="FREE SHIPPING" name="ShipperID" value="@item.ShipperID" checked="checked">
                                                                 </div>
                                                                 i++;
                                                             }
                                                             else
                                                             {
                                                                 <div class="radio__input">
-                                                                    <input type="radio" id="checkout_shipping_rate_id_shopify-@item.ShipperID" class="input-radio" aria-label="FREE SHIPPING" name="checkout[shipping_rate][id]" >
+                                                                    <input type="radio" id="checkout_shipping_rate_id_shopify-@item.ShipperID" class="input-radio" aria-label="FREE SHIPPING" name="ShipperID" value="@item.ShipperID">
                                                                 </div>
                                                                 i++;
                                                             }
