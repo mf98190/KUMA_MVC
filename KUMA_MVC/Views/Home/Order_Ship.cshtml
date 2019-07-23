@@ -2,6 +2,8 @@
     ViewBag.Title = "Order_Pay";
     Layout = "~/Views/Shared/_Layout_KUMA.cshtml";
     var CartToHere = (bool) ViewBag.CartToHere;
+    List<Shipper> shippers = (List<Shipper>) ViewBag.Shippers;
+    int i = 1;
 }
 @section topCSS
 {
@@ -84,7 +86,7 @@
                                     </div>
                                     <div class="section__content">
                                         <div class="content-box">
-                                            <div class="content-box__row">
+                                            @*<div class="content-box__row">
                                                 <div class="radio-wrapper">
                                                     <label for="checkout_shipping_rate_id_shopify-free20shipping-0_00" class="radio__label">
 
@@ -97,10 +99,35 @@
                                                             <span class="content-box_emphasis">免費</span>
                                                         </span>
                                                     </label>
-
                                                 </div>
-
-                                            </div>
+                                            </div>*@
+                                            @foreach (var item in shippers)
+                                            {
+                                                <div class="content-box__row">
+                                                    <div class="radio-wrapper">
+                                                        <label for="checkout_shipping_rate_id_shopify-@item.ShipperID" class="radio__label">
+                                                            @if (i == 1)
+                                                            {
+                                                                <div class="radio__input">
+                                                                    <input type="radio" id="checkout_shipping_rate_id_shopify-@item.ShipperID" class="input-radio" aria-label="FREE SHIPPING" name="checkout[shipping_rate][id]" checked="checked">
+                                                                </div>
+                                                                i++;
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="radio__input">
+                                                                    <input type="radio" id="checkout_shipping_rate_id_shopify-@item.ShipperID" class="input-radio" aria-label="FREE SHIPPING" name="checkout[shipping_rate][id]" >
+                                                                </div>
+                                                                i++;
+                                                            }
+                                                            <span class="radio__label__primary">@item.ShippName</span>
+                                                            <span class="radio__label__accessory">
+                                                                <span class="content-box_emphasis">@item.Fare</span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            }
 
                                         </div>
 
@@ -114,17 +141,17 @@
 
 
 
+                            <div class="step__footer">
+                                <button id="continue_button" class="step__footer__continue-btn btn" type="submit" name="button">
+                                    <!-- loading ICON -->
+                                    <span class="btn__content">前往付款方式</span>
+                                </button>
+                                <a href="/Home/Order_Customer" class="step__footer__previous-link">
+                                    <i class="fas fa-chevron-left"></i><span class="step__footer__previous-link__content">返回客戶資訊</span>
+                                </a>
+                            </div>
+                        </form>
                     </div>
-                    <div class="step__footer">
-                        <button id="continue_button" class="step__footer__continue-btn btn" type="submit" name="button">
-                            <!-- loading ICON -->
-                            <span class="btn__content">前往付款方式</span>
-                        </button>
-                        <a href="/Home/Order_Customer" class="step__footer__previous-link">
-                            <i class="fas fa-chevron-left"></i><span class="step__footer__previous-link__content">返回客戶資訊</span>
-                        </a>
-                    </div>
-                    </form>
                 </div>
                 <!-- 一堆SPAN -->
                 <div class="main__footer">

@@ -32,6 +32,18 @@ namespace KUMA_MVC.ViewModels
         public string ZipCode { get; set; }
         // public string BankAccount { get; set; }
         //public string CreditCard { get; set; }
+        [Display(Name = "貨運商ID")]
+        [Required]
+        public int ShipperID { get; set; }
+
+        [Display(Name = "貨運商公司名稱")]
+        [Required]
+        [StringLength(15)]
+        public string ShippName { get; set; }
+
+        [Display(Name = "運費")]
+        [Required]
+        public decimal Fare { get; set; }
 
         //以下是資料庫沒有的欄位
         public string Bill_CustomerName { get; set; }

@@ -250,6 +250,8 @@ namespace KUMA_MVC.Controllers
             ViewData["Phone"] = OCVM.Phone;
             ViewData["Email"] = OCVM.Email;
             ViewBag.CartToHere = Session["CartToHere"];
+            List<Shipper> shippers = db.Shippers.ToList();
+            ViewBag.Shippers = shippers;
             return View("Order_Ship");
         }
         [HttpGet]
@@ -257,9 +259,11 @@ namespace KUMA_MVC.Controllers
         public ActionResult Order_Ship()  //下單-運送頁面!沒有HEADER跟FOOTER
         {
             var OCVM = (OrderCustomerViewModel)Session["Order_Session"];
+            List<Shipper> shippers = db.Shippers.ToList();
             ViewData["Email"] = OCVM.Email;
             ViewData["Address"] = OCVM.Address;
             ViewBag.CartToHere = Session["CartToHere"];
+            ViewBag.Shippers = shippers;
             ViewData.Model = OCVM;
             return View();
         }
