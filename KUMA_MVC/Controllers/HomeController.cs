@@ -365,8 +365,8 @@ namespace KUMA_MVC.Controllers
             O.RecipientZipCod = OCVM.ZipCode;
             O.RecipientAddressee = address[rnd.Next(address.Count)];
             O.RecipientPhone = phone[rnd.Next(phone.Count)];
-            int n = rnd.Next(1, fare.Count); 
-            O.ShippingID = n;
+            int n = rnd.Next(fare.Count); 
+            O.ShippingID = n+1;
             O.Fare_now = fare[n];
             O.RecipientCountry = country[rnd.Next(country.Count)];
 

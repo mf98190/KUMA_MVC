@@ -3156,6 +3156,7 @@
     <Content Include="Assets\json\hot.json" />
     <None Include="Properties\PublishProfiles\KUMAMVC - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\KUMAMVC - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mf98190Translate - FTP.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
