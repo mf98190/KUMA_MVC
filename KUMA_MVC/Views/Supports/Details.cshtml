@@ -1,0 +1,66 @@
+﻿@model KUMA_MVC.Models.Support
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Support</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.StatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportCategory.SupportCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupportCategory.SupportCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupportTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupportContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupportTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupportID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

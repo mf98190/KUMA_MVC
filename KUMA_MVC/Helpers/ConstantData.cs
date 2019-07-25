@@ -45,7 +45,8 @@ namespace KUMA_MVC.Helpers
             IdentityModels = 13,
             BackSystemRegister = 14,
             AllStockChart = 15,
-            AllKindChart = 16
+            AllKindChart = 16,
+            Supports = 17,
         }
 
         public enum StockEnough

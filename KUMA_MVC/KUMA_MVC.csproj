@@ -193,6 +193,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShippersController.cs" />
     <Compile Include="Controllers\SizesController.cs" />
+    <Compile Include="Controllers\SupportsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3297,6 +3298,12 @@
     <Content Include="Views\Sizes\Delete.cshtml" />
     <Content Include="Views\Sizes\Details.cshtml" />
     <Content Include="Views\Sizes\Edit.cshtml" />
+    <Content Include="Views\Supports\Create.cshtml" />
+    <Content Include="Views\Supports\Delete.cshtml" />
+    <Content Include="Views\Supports\Details.cshtml" />
+    <Content Include="Views\Supports\Edit.cshtml" />
+    <Content Include="Views\Supports\Index.cshtml" />
+    <Content Include="Views\BackSystem\ListAllSupports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<KUMA_MVC.Models.Support>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.StatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupportCategory.SupportCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupportTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupportContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupportTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.StatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupportCategory.SupportCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupportTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupportContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupportTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SupportID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SupportID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupportID })
+        </td>
+    </tr>
+}
+
+</table>

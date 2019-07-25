@@ -262,6 +262,12 @@ namespace KUMA_MVC.Controllers
             List<AspNetUser> aspNetUsers = db.AspNetUsers.OrderBy(x => x.Id).ToList();
             return View(aspNetUsers);
         }
+
+        public ActionResult ListAllSupports()
+        {
+            List<Support> supports= db.Supports.OrderBy(x => x.SupportID).ToList();
+            return View(supports);
+        }
     }
 
     [Backend]
