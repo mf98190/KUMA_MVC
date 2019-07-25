@@ -353,6 +353,10 @@ namespace KUMA_MVC.Controllers
             {
                 "+639051234567", "+817012345678", "+85261234567", "+12042345678", "+5491123456789", "+358412345678"
             };
+            List<decimal> fare = new List<decimal>()
+            {
+                60,60,60,80,90
+            };
             var O = new Order();
 
             // 存到Order資料庫
@@ -361,8 +365,9 @@ namespace KUMA_MVC.Controllers
             O.RecipientZipCod = OCVM.ZipCode;
             O.RecipientAddressee = address[rnd.Next(address.Count)];
             O.RecipientPhone = phone[rnd.Next(phone.Count)];
-            O.ShippingID = OCVM.ShipperID;
-            O.Fare_now = OCVM.Fare;
+            int n = rnd.Next(1, fare.Count); 
+            O.ShippingID = n;
+            O.Fare_now = fare[n];
             O.RecipientCountry = country[rnd.Next(country.Count)];
 
             var Userid = User.Identity.GetUserId();
@@ -383,7 +388,16 @@ namespace KUMA_MVC.Controllers
             //O.ShipDate = DateTime.Now.AddHours(1);
 
             REPO_O.Create(O);
+            try
+            {
             db.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
             var OrderList = db.Orders.ToList();
             var OrderID = OrderList.Last().OrderID;
 
