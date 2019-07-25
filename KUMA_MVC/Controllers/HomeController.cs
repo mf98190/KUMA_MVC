@@ -340,6 +340,10 @@ namespace KUMA_MVC.Controllers
             {
                 "銀行轉帳", "信用卡/VISA金融卡", "貨到付款"
             };
+            List<string> zipCode = new List<string>()
+            {
+                "300", "226", "267", "413", "362", "649", "901"
+            };
             List<string> city = new List<string>()
             {
                 "Keelung", "Taipei", "Hsinchu", "Taichung", "Tainan", "Kaohsiung", "Yilan", "Taoyuan", "Miaoli", "Changhua", "Nantou"
@@ -362,7 +366,7 @@ namespace KUMA_MVC.Controllers
             // 存到Order資料庫
             O.RecipientName = name[rnd.Next(name.Count)];
             O.RecipientCity = city[rnd.Next(city.Count)];
-            O.RecipientZipCod = OCVM.ZipCode;
+            O.RecipientZipCod = zipCode[rnd.Next(zipCode.Count)];
             O.RecipientAddressee = address[rnd.Next(address.Count)];
             O.RecipientPhone = phone[rnd.Next(phone.Count)];
             int n = rnd.Next(fare.Count); 
