@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using KUMA_MVC.Helpers;
 using KUMA_MVC.Models;
 
 namespace KUMA_MVC.Controllers
@@ -13,12 +14,13 @@ namespace KUMA_MVC.Controllers
     public class SupportsController : Controller
     {
         private KumaModel db = new KumaModel();
+        private Helper hp = new Helper();
 
         // GET: Supports
         public ActionResult Index()
         {
-            var supports = db.Supports.Include(s => s.AspNetUser).Include(s => s.Status).Include(s => s.SupportCategory);
-            return View(supports.ToList());
+            List<Support> supports = db.Supports.OrderBy(x => x.SupportID).ToList();
+            return View("../BackSystem/ListAllSupports", supports);
         }
 
         // GET: Supports/Details/5
@@ -52,6 +54,7 @@ namespace KUMA_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SupportID,UserID,SupportCategoryID,SupportTitle,SupportContent,StatusID,SupportTime")] Support support)
         {
+            support.SupportTime = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Supports.Add(support);

@@ -43,27 +43,34 @@ namespace KUMA_MVC.Models
 
         [Required]
         [StringLength(256)]
+        [Column(TypeName = "nvarchar")]
         public string UserName { get; set; }
 
         [Required]
         [StringLength(30)]
+        [Column(TypeName = "nvarchar")]
         public string Name { get; set; }
 
         [StringLength(15)]
+        [Column(TypeName = "nvarchar")]
         public string City { get; set; }
 
         [StringLength(15)]
+        [Column(TypeName = "nvarchar")]
         public string Country { get; set; }
 
         public string Address { get; set; }
 
         [StringLength(10)]
+        [Column(TypeName = "nvarchar")]
         public string ZipCode { get; set; }
 
         [StringLength(20)]
+        [Column(TypeName = "nvarchar")]
         public string BankAccount { get; set; }
 
         [StringLength(10)]
+        [Column(TypeName = "nvarchar")]
         public string CreditCard { get; set; }
 
         public string LineUserID { get; set; }

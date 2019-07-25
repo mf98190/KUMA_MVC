@@ -1,8 +1,98 @@
-﻿@model KUMA_MVC.Models.Support
+﻿@model Support
 
 @{
-    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BackSystem_Layout.cshtml";
+    ViewBag.Title = "Support";
 }
+@section topCSS
+{
+    <link href="~/Assets/BackSystem/assets/css/CRUD-style.css" rel="stylesheet" />
+}
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>會員</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">會員</a></li>
+                    <li><a href="/BackSystem/ListAllSupports">支援</a></li>
+                    <li class="active">Details</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Details <strong>訂單</strong>
+    </div>
+    <div class="card-body card-block">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SupportID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SupportID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SupportCategory.SupportCategoryName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SupportCategory.SupportCategoryName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SupportTitle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SupportTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SupportContent)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SupportContent)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status.StatusName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status.StatusName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SupportTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SupportTime)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SupportID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
 
 <h2>Details</h2>
 

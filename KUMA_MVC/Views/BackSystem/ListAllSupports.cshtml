@@ -36,39 +36,33 @@
                         <p>
                             @Html.ActionLink("Create New", "Create", "Supports")
                         </p>
-                        </p>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table-export_info">
                             <thead>
                                 <tr role="row">
-                                    <th class="sorting_asc text-center" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="  @Html.DisplayNameFor(model => model.ShipperID): activate to sort column descending" style="width:52px; text-align:center;">
-                                        @Html.DisplayNameFor(model => model.ShipperID)
+                                    <th class="sorting_asc text-center" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="  @Html.DisplayNameFor(model => model.SupportID): activate to sort column descending" style="width:52px; text-align:center;">
+                                        @Html.DisplayNameFor(model => model.SupportID)
                                     </th>
-                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.ShippName): activate to sort column ascending" style="width: 184px;">
-                                        @Html.DisplayNameFor(model => model.ShippName)
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.Phone): activate to sort column ascending" style="width: 280px;">
-                                        @Html.DisplayNameFor(model => model.Phone)
-                                    <th></th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.AspNetUser.Email)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Status.StatusName)
-                                    </th>
-                                    <th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.SupportCategory.SupportCategoryName): activate to sort column ascending" style="width: 184px;">
                                         @Html.DisplayNameFor(model => model.SupportCategory.SupportCategoryName)
                                     </th>
-                                    <th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.UserID): activate to sort column ascending" style="width: 184px;">
+                                        @Html.DisplayNameFor(model => model.UserID)
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.SupportTitle): activate to sort column ascending" style="width: 184px;">
                                         @Html.DisplayNameFor(model => model.SupportTitle)
                                     </th>
-                                    <th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.SupportContent): activate to sort column ascending" style="width: 184px;">
                                         @Html.DisplayNameFor(model => model.SupportContent)
                                     </th>
-                                    <th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.Status.StatusName): activate to sort column ascending" style="width: 184px;">
+                                        @Html.DisplayNameFor(model => model.Status.StatusName)
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="@Html.DisplayNameFor(model => model.SupportTime): activate to sort column ascending" style="width: 184px;">
                                         @Html.DisplayNameFor(model => model.SupportTime)
                                     </th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -88,18 +82,30 @@
                                     }
                                     <tr @classstring>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.ShipperID)
+                                            @Html.DisplayFor(modelItem => item.SupportID)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.ShippName)
+                                            @Html.DisplayFor(modelItem => item.SupportCategory.SupportCategoryName)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Phone)
+                                            @Html.DisplayFor(modelItem => item.UserID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SupportTitle)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SupportContent)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status.StatusName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SupportTime)
                                         </td>
                                         <td style="width: 150px;">
-                                            @Html.ActionLink("Edit", "Edit", "Supports", new { id = item.ShipperID }, new { @class = "" }) |
-                                            @Html.ActionLink("Details", "Details", "Supports", new { id = item.ShipperID }, new { @class = "" }) |
-                                            @Html.ActionLink("Delete", "Delete", "Supports", new { id = item.ShipperID }, new { @class = "" })
+                                            @Html.ActionLink("Edit", "Edit", "Supports", new { id = item.SupportID }, new { @class = "" }) |
+                                            @Html.ActionLink("Details", "Details", "Supports", new { id = item.SupportID }, new { @class = "" }) |
+                                            @Html.ActionLink("Delete", "Delete", "Supports", new { id = item.SupportID }, new { @class = "" })
                                         </td>
                                     </tr>
                                 }
@@ -134,7 +140,7 @@
 }
 
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -189,4 +195,4 @@
         </tr>
     }
 
-</table>
+</table>*@

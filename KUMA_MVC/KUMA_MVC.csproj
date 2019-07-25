@@ -236,6 +236,10 @@
     <Compile Include="Migrations\201907231531022_order地址長度增加.Designer.cs">
       <DependentUpon>201907231531022_order地址長度增加.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907251507163_user表更改欄位型別.cs" />
+    <Compile Include="Migrations\201907251507163_user表更改欄位型別.Designer.cs">
+      <DependentUpon>201907251507163_user表更改欄位型別.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
@@ -3302,7 +3306,6 @@
     <Content Include="Views\Supports\Delete.cshtml" />
     <Content Include="Views\Supports\Details.cshtml" />
     <Content Include="Views\Supports\Edit.cshtml" />
-    <Content Include="Views\Supports\Index.cshtml" />
     <Content Include="Views\BackSystem\ListAllSupports.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -3355,6 +3358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907231531022_order地址長度增加.resx">
       <DependentUpon>201907231531022_order地址長度增加.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907251507163_user表更改欄位型別.resx">
+      <DependentUpon>201907251507163_user表更改欄位型別.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
