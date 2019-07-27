@@ -240,6 +240,66 @@
     <Compile Include="Migrations\201907251507163_user表更改欄位型別.Designer.cs">
       <DependentUpon>201907251507163_user表更改欄位型別.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907270300056_增加支援及供應商的key屬性.cs" />
+    <Compile Include="Migrations\201907270300056_增加支援及供應商的key屬性.Designer.cs">
+      <DependentUpon>201907270300056_增加支援及供應商的key屬性.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270308201_增加支援、供應商及狀態的自動增加識別碼的屬性.cs" />
+    <Compile Include="Migrations\201907270308201_增加支援、供應商及狀態的自動增加識別碼的屬性.Designer.cs">
+      <DependentUpon>201907270308201_增加支援、供應商及狀態的自動增加識別碼的屬性.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270312097_增加支援、供應商及狀態的自動增加識別碼的屬性y94u6h4.cs" />
+    <Compile Include="Migrations\201907270312097_增加支援、供應商及狀態的自動增加識別碼的屬性y94u6h4.Designer.cs">
+      <DependentUpon>201907270312097_增加支援、供應商及狀態的自動增加識別碼的屬性y94u6h4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270317397_增加支援、供應商及狀態的自動增加識別碼的屬性在一次.cs" />
+    <Compile Include="Migrations\201907270317397_增加支援、供應商及狀態的自動增加識別碼的屬性在一次.Designer.cs">
+      <DependentUpon>201907270317397_增加支援、供應商及狀態的自動增加識別碼的屬性在一次.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270329148_增加支援的自動增加識別碼的屬性再一次.cs" />
+    <Compile Include="Migrations\201907270329148_增加支援的自動增加識別碼的屬性再一次.Designer.cs">
+      <DependentUpon>201907270329148_增加支援的自動增加識別碼的屬性再一次.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270518402_增加支援的自動增加識別碼的屬性再一次1.cs" />
+    <Compile Include="Migrations\201907270518402_增加支援的自動增加識別碼的屬性再一次1.Designer.cs">
+      <DependentUpon>201907270518402_增加支援的自動增加識別碼的屬性再一次1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270521526_刪除唯一識別值.cs" />
+    <Compile Include="Migrations\201907270521526_刪除唯一識別值.Designer.cs">
+      <DependentUpon>201907270521526_刪除唯一識別值.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270523440_刪除唯一識別值y4u6h4.cs" />
+    <Compile Include="Migrations\201907270523440_刪除唯一識別值y4u6h4.Designer.cs">
+      <DependentUpon>201907270523440_刪除唯一識別值y4u6h4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270525276_刪除唯一識別值再一次.cs" />
+    <Compile Include="Migrations\201907270525276_刪除唯一識別值再一次.Designer.cs">
+      <DependentUpon>201907270525276_刪除唯一識別值再一次.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270527382_刪除唯一識別值3.cs" />
+    <Compile Include="Migrations\201907270527382_刪除唯一識別值3.Designer.cs">
+      <DependentUpon>201907270527382_刪除唯一識別值3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270535463_再試試.cs" />
+    <Compile Include="Migrations\201907270535463_再試試.Designer.cs">
+      <DependentUpon>201907270535463_再試試.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270651512_再試試2.cs" />
+    <Compile Include="Migrations\201907270651512_再試試2.Designer.cs">
+      <DependentUpon>201907270651512_再試試2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270717062_再試試3.cs" />
+    <Compile Include="Migrations\201907270717062_再試試3.Designer.cs">
+      <DependentUpon>201907270717062_再試試3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270720545_再試試4.cs" />
+    <Compile Include="Migrations\201907270720545_再試試4.Designer.cs">
+      <DependentUpon>201907270720545_再試試4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907270731399_更改支援的支援標題欄位屬性.cs" />
+    <Compile Include="Migrations\201907270731399_更改支援的支援標題欄位屬性.Designer.cs">
+      <DependentUpon>201907270731399_更改支援的支援標題欄位屬性.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
@@ -3361,6 +3421,51 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907251507163_user表更改欄位型別.resx">
       <DependentUpon>201907251507163_user表更改欄位型別.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270300056_增加支援及供應商的key屬性.resx">
+      <DependentUpon>201907270300056_增加支援及供應商的key屬性.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270308201_增加支援、供應商及狀態的自動增加識別碼的屬性.resx">
+      <DependentUpon>201907270308201_增加支援、供應商及狀態的自動增加識別碼的屬性.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270312097_增加支援、供應商及狀態的自動增加識別碼的屬性y94u6h4.resx">
+      <DependentUpon>201907270312097_增加支援、供應商及狀態的自動增加識別碼的屬性y94u6h4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270317397_增加支援、供應商及狀態的自動增加識別碼的屬性在一次.resx">
+      <DependentUpon>201907270317397_增加支援、供應商及狀態的自動增加識別碼的屬性在一次.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270329148_增加支援的自動增加識別碼的屬性再一次.resx">
+      <DependentUpon>201907270329148_增加支援的自動增加識別碼的屬性再一次.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270518402_增加支援的自動增加識別碼的屬性再一次1.resx">
+      <DependentUpon>201907270518402_增加支援的自動增加識別碼的屬性再一次1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270521526_刪除唯一識別值.resx">
+      <DependentUpon>201907270521526_刪除唯一識別值.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270523440_刪除唯一識別值y4u6h4.resx">
+      <DependentUpon>201907270523440_刪除唯一識別值y4u6h4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270525276_刪除唯一識別值再一次.resx">
+      <DependentUpon>201907270525276_刪除唯一識別值再一次.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270527382_刪除唯一識別值3.resx">
+      <DependentUpon>201907270527382_刪除唯一識別值3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270535463_再試試.resx">
+      <DependentUpon>201907270535463_再試試.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270651512_再試試2.resx">
+      <DependentUpon>201907270651512_再試試2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270717062_再試試3.resx">
+      <DependentUpon>201907270717062_再試試3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270720545_再試試4.resx">
+      <DependentUpon>201907270720545_再試試4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907270731399_更改支援的支援標題欄位屬性.resx">
+      <DependentUpon>201907270731399_更改支援的支援標題欄位屬性.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

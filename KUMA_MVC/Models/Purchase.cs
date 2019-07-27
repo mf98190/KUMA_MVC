@@ -15,7 +15,8 @@ namespace KUMA_MVC.Models
             PurchaseDetails = new HashSet<PurchaseDetail>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PurchaseID { get; set; }
 
         public int SupplierID { get; set; }

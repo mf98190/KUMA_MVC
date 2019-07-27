@@ -15,7 +15,8 @@ namespace KUMA_MVC.Models
             Supports = new HashSet<Support>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SupportCategoryID { get; set; }
 
         [Required]

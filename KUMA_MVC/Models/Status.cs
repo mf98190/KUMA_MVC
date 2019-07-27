@@ -16,7 +16,7 @@ namespace KUMA_MVC.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StasusID { get; set; }
 
         [Required]

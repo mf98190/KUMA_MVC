@@ -8,6 +8,7 @@ namespace KUMA_MVC.Models
 
     public partial class Support
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SupportID { get; set; }
 
@@ -19,6 +20,7 @@ namespace KUMA_MVC.Models
 
         [Required]
         [StringLength(128)]
+        [Column(TypeName = "nvarchar")]
         public string SupportTitle { get; set; }
 
         [Required]

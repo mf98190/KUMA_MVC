@@ -253,7 +253,6 @@ namespace KUMA_MVC.Controllers
             List<Shipper> shippers = db.Shippers.ToList();
             ViewBag.Shippers = shippers;
             return View("Order_Ship");
-            return RedirectToAction("Order_Ship");
         }
         [HttpGet]
         [AllowAnonymous]

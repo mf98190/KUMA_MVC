@@ -54,6 +54,8 @@ namespace KUMA_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SupportID,UserID,SupportCategoryID,SupportTitle,SupportContent,StatusID,SupportTime")] Support support)
         {
+            List<Support> supports = db.Supports.ToList();
+            support.SupportID = supports.LastOrDefault().SupportID + 1;
             support.SupportTime = DateTime.Now;
             if (ModelState.IsValid)
             {

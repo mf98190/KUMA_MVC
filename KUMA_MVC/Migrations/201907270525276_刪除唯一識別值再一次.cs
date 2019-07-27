@@ -1,0 +1,16 @@
+namespace KUMA_MVC.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class 刪除唯一識別值再一次 : DbMigration
+    {
+        public override void Up()
+        {
+        }
+        
+        public override void Down()
+        {
+        }
+    }
+}
