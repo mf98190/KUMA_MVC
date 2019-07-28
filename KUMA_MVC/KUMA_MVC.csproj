@@ -300,6 +300,10 @@
     <Compile Include="Migrations\201907270731399_更改支援的支援標題欄位屬性.Designer.cs">
       <DependentUpon>201907270731399_更改支援的支援標題欄位屬性.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907281321051_User_AddLineImgUrl.cs" />
+    <Compile Include="Migrations\201907281321051_User_AddLineImgUrl.Designer.cs">
+      <DependentUpon>201907281321051_User_AddLineImgUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
@@ -3466,6 +3470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907270731399_更改支援的支援標題欄位屬性.resx">
       <DependentUpon>201907270731399_更改支援的支援標題欄位屬性.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281321051_User_AddLineImgUrl.resx">
+      <DependentUpon>201907281321051_User_AddLineImgUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
